@@ -11,7 +11,6 @@ def format_date(date_string):
     date = date_string[0:11]
     return date
 
-# dict factory function for db
 def dict_factory(cursor, row):
     d = {}
     for idx, col in enumerate(cursor.description):
@@ -25,7 +24,6 @@ def create_entry_dict():
     return entry
 
 # fills entry dict with data for one library entry
-# ugly function but works well in this case
 def fill_entry_dict(data):       
                                                
     conn = sqlite3.connect('library.db')
