@@ -4,7 +4,7 @@ from app import helpers
 import sqlite3
 from datetime import datetime
 
-from flask import redirect, render_template, request, session, jsonify
+from flask import redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.utils import secure_filename
 
@@ -32,6 +32,7 @@ def login():
         if row is not None:
             user_hash = row[0]
 
+# checking password hash against user data
         if row is not None and check_password_hash(user_hash, pw) is True:
 
             session['user'] = username
@@ -56,6 +57,7 @@ def logout():
 
     if request.method == "POST":
 
+# removing user session from flask session variable
         session.pop('user', None)
 
         message = "Logged out"
@@ -106,6 +108,7 @@ def register():
             message = "Username already exists"
             return render_template("macha-register.html", message=message, categories=categories)
 
+# hashing password with werkzeug module and storing in database
         hash = generate_password_hash(pw)
 
         if (pw != request.form.get('confirmPassword')):
@@ -144,8 +147,7 @@ def entry():
         desc = request.form.get('entry-body')
         username = session['user']
 
-# need to limit title input to 100 chars and body input to 1000 chars on the front end - JS
-
+# currently no character limits on text inputs - this is TODO
         conn = sqlite3.connect('library.db')
         cursor = conn.cursor()
 
@@ -156,7 +158,7 @@ def entry():
         datetime_now = datetime.now()
         datetime_now = str(datetime_now)
 
-# dealing with optional image file upload - currently not returning any error messages on non success
+# storing image file in database as blob data, without interim server upload
         if request.files:
             image = request.files['entry-file']
             img_filename = secure_filename(image.filename)
@@ -228,6 +230,7 @@ def browse():
             cursor.execute("SELECT title, url, body, user_id, datetime, mimetype, image FROM entries WHERE id=?", (entry_id,))
             data = cursor.fetchone()
 
+# blob image data decoded in helpers.py
             if data is not None:
                 filled_entry = helpers.fill_entry_dict(data)
                 entries.append(filled_entry)
@@ -259,6 +262,7 @@ def search():
             message = "Please log in to search the library"
             return render_template("macha-login.html", categories=categories, message=message)
 
+# searching database using SQL like query - this functionality should be improved upon
         search = request.form.get('text-search')
         search = '%' + search + '%'
 
