@@ -16,7 +16,7 @@
 }
 
 /* responsive font size */
-html { font-size: calc(0.5em + 0.8vw) }
+html { font-size: calc(0.6em + 0.7vw) }
 button { font-size: inherit }
 input { font-size: inherit }
 h4 { text-align: center }
@@ -65,23 +65,23 @@ body { font-size: 0.8em }
 
 @media only screen and (min-width: 900px) {
     #back-background-block {
-      height: 80vh;
+      height: 84vh;
     }
 
     #carouselExampleFade {
-        height: 80vh;
+        height: 84vh;
     }
 
     #carousel-inner {
-        height: 80vh;
+        height: 84vh;
     }
 
     #carousel-button {
-        height: 80vh;
+        height: 84vh;
     }
 
     #form {
-        height: 80vh;
+        height: 84vh;
     }
 }
 
@@ -297,6 +297,10 @@ carousel { height: calc(100vh - 56px);}
 #formHelpBlock {
     font-weight: normal !important;
     font-size: 0.7em;
+}
+
+#uploadLabel {
+    text-align: left;
 }
 
 #form-checkbox, #form-checkbox2 {
