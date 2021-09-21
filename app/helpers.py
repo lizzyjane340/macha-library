@@ -6,7 +6,6 @@ def category_list():
     categories = ['Languages', 'Hardware', 'Software', 'Mathematics', 'Comp Sci', 'Dev Tools', 'Graphics', 'Operating Systems', 'Networking', 'CS History', 'Security']
     return categories
 
-# formats datetime string to remove the time
 def format_date(date_string):
     date = date_string[0:11]
     return date
