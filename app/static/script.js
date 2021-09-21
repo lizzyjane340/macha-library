@@ -23,7 +23,6 @@
         
     darkmode.showWidget();
 
-
 // date widget for navbar 
 var months = ['January','February','March','April','May','June','July',
 'August','September','October','November','December'];
@@ -32,7 +31,7 @@ var date = new Date();
 
 document.getElementById("spanDate").innerHTML = "session: " + date.toUTCString();
 
-/* file upload alert */
+// file upload alert
 let uploadFile = document.getElementById('entry-file');
 
 uploadFile.addEventListener('change', () => {
