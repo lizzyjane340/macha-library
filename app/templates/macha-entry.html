@@ -1,0 +1,55 @@
+{% extends "macha-layout.html" %}
+
+{% block title %}
+  macha contribute
+{% endblock %}
+
+{% block main %}
+<!--START form for main content block-->
+<form action="/macha-entry" method="POST" enctype="multipart/form-data">
+  <div class="container-fluid col-md-12 justify-content-center text-center" aria-label="entry-form" id="form">
+<!--title input-->
+    <div class="row justify-content-center align-items-center">
+      <div class="form-group col-md-6 text-center" aria-label="text field for entry title">
+        <br>
+        <p class="text-justify" id="text-body"><h4>Contribute</h4></p>
+        <input autocomplete="off" autofocus class="form-control" name="entry-title" placeholder="Title" type="text" aria-describedby="titleBlock"> 
+        <input autocomplete="off" autofocus class="form-control" name="entry-link" placeholder="URL" type="text" aria-describedby="linkBlock"> 
+        <textarea class="form-control" id="textAreaExample3" name="entry-body" placeholder="Description" rows="2"></textarea>  
+        <span id="form-text-other">Select categories:</span>
+      </div>
+    </div>
+<!--select categories radio buttons-->
+    <div class="row justify-content-center align-items-center">
+      <div class="form-group col-md-6 text-center" id="form-text-other">
+      {% for cat in categories %}
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" name= "options" value = "{{ cat }}" id="catCheck">
+          <label class="form-check-label" for="catCheck">{{ cat }}</label>
+        </div>
+    {% endfor %}
+      </div>
+    </div>
+<!--upload .jpeg .png image file input-->
+  <div class="row justify-content-center align-items-center">
+    <div class="form-group col-md-5">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="entry-file" id="entry-file">
+        <label class="custom-file-label" for="img_file" id="uploadLabel">Upload square image file  </label>
+      </div>
+    </div>
+  </div>
+<!--submit form button-->
+  <div class="row justify-content-center align-items-center">
+    <div class="form-group col-md-6 text-center">
+      <button name="submit" class="btn btn-success btn-sm" type="submit" value="submit" id="btn">Submit</button>  
+    </div>
+  </div>
+  <!--error message div-->
+  <div class="row justify-content-center align-items-center">
+    <p id="message-text"><b>{{ message }}</b></p> 
+  </div>
+</div>
+</form>
+<!--END form for main content block-->
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "macha-layout.html" %}
+
+{% block title %}
+  macha-register
+{% endblock %}
+
+{% block main %}
+<!--START register form for main block-->
+<form action="/macha-register" method="POST">
+  <div class="container-fluid col-md-12 justify-content-center align-content-center" aria-label="login form" id="form">
+<!--create username text input-->   
+    <div class="row justify-content-center align-items-center">
+      <div class="form-group col-md-6 text-center" aria-label="user registration form">
+        <br>
+        <p class="text-justify" id="text-body"><h4>Register</h4></p>
+        <br>
+          <input autocomplete="off" autofocus class="form-control" name="createUsername" placeholder="Create Username" type="text" aria-describedby="usernameBlock">
+        <br>
+<!--create password/confirm password text input-->
+          <input autocomplete="off" autofocus class="form-control" name="createPassword" placeholder="Create Password" type="password" aria-describedby="passwordBlock">
+          <input autocomplete="off" autofocus class="form-control" name="confirmPassword" placeholder="Re-Type Password" type="password" aria-describedby="passwordBlock">   
+        <div id="formHelpBlock">
+          <br>
+            Password should contain minimum 8 characters, letters, numbers & special characters, no spaces. Username should contain 8-20 characters, letters & numbers, no spaces.
+        </div>
+        <br>
+      </div>
+    </div>
+<!--form submit button input-->
+    <div class="row justify-content-center align-items-center">
+      <div class="form-group col-md-6 text-center">
+        <button name="submit" class="btn btn-success" type="submit" value="submit" id="btn">Submit</button>       
+      </div>
+    </div>
+<!--user message div-->
+    <div class="row justify-content-center align-items-center">
+        <p class="message-text"><br><b>{{ message }}</b></p> 
+    </div>
+  </div>
+</form>
+<!-- END register form for main block-->
+{% endblock %}

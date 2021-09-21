@@ -1,0 +1,330 @@
+
+/* darkmode z-index control */
+.darkmode-layer, .darkmode-toggle {
+    z-index: 2;
+} 
+
+/* darkmode image colour override control */
+.darkmode--activated .img-thumbnail #img-thumbnail {
+    isolation: isolate;
+    mix-blend-mode: difference;
+}
+
+.img-thumbnail {
+    height: auto;
+    width: auto;
+}
+
+/* responsive font size */
+html { font-size: calc(0.5em + 0.8vw) }
+button { font-size: inherit }
+input { font-size: inherit }
+h4 { text-align: center }
+h6 { text-align:center }
+body { font-size: 0.8em }
+
+@media only screen and (min-width: 300px) {
+    #back-background-block {
+        height: 58vh;
+    }
+
+    #carouselExampleFade {
+        height: 58vh;
+    }
+
+    #carousel-inner {
+        height: 58vh;
+    }
+
+    #carousel-button {
+        height: 58vh;
+    }
+
+    #form {
+        height: 58vh;
+    }
+}
+
+@media only screen and (min-width: 350px) {
+    #back-background-block {
+        height: 68vh;
+    }
+
+    #carouselExampleFade {
+        height: 68vh;
+    }
+
+    #carousel-inner {
+        height: 68vh;
+    }
+
+    #carousel-button {
+        height: 68vh;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    #back-background-block {
+      height: 80vh;
+    }
+
+    #carouselExampleFade {
+        height: 80vh;
+    }
+
+    #carousel-inner {
+        height: 80vh;
+    }
+
+    #carousel-button {
+        height: 80vh;
+    }
+
+    #form {
+        height: 80vh;
+    }
+}
+
+.badge-secondary { font-size: 0.1em }
+
+/* carousel height */
+carousel { height: calc(100vh - 56px);}
+.carousel-inner,.carousel-item { height: 100%;}
+
+/* clearfix for potential div overflow */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+ 
+/* form placeholder text fomatting */
+.form-control::placeholder {
+    color:black;
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.form-inline::placeholder {
+    color:black;
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+.select-dropdown-text::placeholder {
+    color:black;
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+#nav {
+    background-color: rgb(195, 235, 195) !important;
+    background-size: cover;
+    font-weight: bold;
+    font-size: 0.9em;
+    width: 100vw;
+}
+
+/* background block contains all page content */
+#back-background-block {
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+/* functions as 2nd nav bar */
+#background-block {
+    background-image: url('/static/macha-library-wallpaper.jpeg');   
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 0.9em;
+    padding: 0.2rem;
+    padding-bottom: 0.4rem;
+    width: 100%;
+}
+
+#main-content-block {
+    background-color: whitesmoke;
+    width: 100%;
+}
+
+/* quote block content div */
+#side-text-block {
+    background-color: whitesmoke;
+}
+
+#side-text-format {
+    background-color: whitesmoke;
+    font-size: 1em;
+    text-align: center;
+}
+
+/* categories dropdown menu */
+#select-dropdown-menu {
+    font-size: 0.8em;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+/* username and date text*/
+#dateBlock {
+    font-size: 0.7em;
+    font-weight: normal;
+    color: white;
+    background-color: rgb(99, 109, 117);
+    padding: 0.2rem;
+    margin-top: 0.3rem;
+    margin-right: 0.2rem;
+}
+
+#username-text {
+    font-weight: normal !important;
+    font-size: 0.8em;
+    background-color: rgb(99, 109, 117);
+    color: white;
+    font-weight: normal;
+    padding: 0.2rem;
+    margin-top: 0.3rem;
+}
+
+/* carousel IDs */
+#carousel-content {
+    justify-items: center;
+    align-items: center;
+}
+
+#carousel-inner {
+    background-color: whitesmoke;     
+    text-align: center;
+    justify-content: center;
+    font-size: 1.1em;
+    position: absolute;
+    vertical-align: middle;
+    padding: 2rem;
+}
+
+#carousel-button {
+    background-image: url('/static/macha-library-wallpaper.jpeg');   
+    opacity: 1 !important;
+    width: 7%;
+}
+
+#carousel-btn-label {
+    font-size: 0.8em !important;
+    color: whitesmoke !important;
+}
+
+#carousel-link {
+    color: darkgreen !important;
+    font-weight: normal !important;
+    font-size: 1.3rem !important;
+    padding: 0.5rem;
+}
+
+#img-thumbnail {
+    padding: 0.1rem;
+    justify-self: center;
+}
+
+#carousel-body-text {
+    font-weight: normal;
+    padding: 1.5rem;
+    font-size: 0.9em;
+}
+
+/* all buttons */
+#btn {
+    font-weight: normal;
+    border-color: black;
+    margin-left: 0.1rem;
+    margin-top: 0.1rem;
+    font-size: inherit;
+}
+
+/* select dropdown button */
+#btn2 {
+    font-weight: normal;
+    border-color: black;
+    margin-left: 0.4rem;
+    margin-top: 0.1rem;
+    font-size: inherit;
+}
+
+/* form div */
+#form {
+    z-index: 1;
+    background-color: whitesmoke;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    font-weight: normal;
+}
+
+/* text formatting and sizes */
+#text-field {
+    width: 25rem;
+}
+
+#text-body {
+    color: black !important;
+    font-weight: normal !important;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    text-align: center;
+}
+
+#text-body-default {
+    color: black;
+    font-weight: normal;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#form-text-other {
+    font-size: 0.8em;
+    font-weight: normal !important;
+    color: black;
+}
+
+#message-text {
+    font-size: 0.9em;
+    font-weight: bold !important;
+    text-align: center;
+    color: black;
+}
+
+#formHelpBlock {
+    font-weight: normal !important;
+    font-size: 0.7em;
+}
+
+#form-checkbox, #form-checkbox2 {
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(195, 235, 195);
+}
+
+/* footer */
+#footer {
+    background-color: rgb(195, 235, 195);
+    padding: 0;
+    z-index: 1;
+}
+
+/* image to fill base of md size screens */
+#tablet-fill-div {
+    background-image: url('/static/macha-library-wallpaper.jpeg');   
+    background-repeat: no-repeat;
+    background-size: cover; 
+    height: 65%;
+}
+
+
+
+  
+
+
+
+
+
