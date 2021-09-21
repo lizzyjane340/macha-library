@@ -68,7 +68,4 @@ def fill_entry_dict(data):
                 blob = None
 
         conn.close()
-        return entry
-                
-
-
+        return entry   

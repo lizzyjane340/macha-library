@@ -6,4 +6,3 @@ app.run()
 @app.errorhandler(Exception)          
 def basic_error(e):          
     return "an error occured: " + str(e)
-

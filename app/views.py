@@ -337,11 +337,3 @@ def delete():
         message = ""
 
         return render_template("macha-browse.html", categories=categories)
-
-
-    
-
-
-
-
-

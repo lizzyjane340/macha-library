@@ -38,10 +38,3 @@ let uploadFile = document.getElementById('entry-file');
 uploadFile.addEventListener('change', () => {
     document.getElementById('uploadLabel').innerHTML = "File Uploaded";
 });
-
-
-
-
-
-
-
