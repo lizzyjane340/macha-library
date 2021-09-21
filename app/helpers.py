@@ -10,12 +10,6 @@ def format_date(date_string):
     date = date_string[0:11]
     return date
 
-def dict_factory(cursor, row):
-    d = {}
-    for idx, col in enumerate(cursor.description):
-        d[col[0]] = row[idx]
-    return d
-
 # creates dict for database entries values
 def create_entry_dict():                   
     entry_dict_keys = ['title', 'url', 'body', 'datetime', 'image', 'mimetype', 'user_id', 'username']
