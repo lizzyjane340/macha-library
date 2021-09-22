@@ -46,17 +46,19 @@ You may find it beneficial to run Macha Library in a **venv** environment.
 Pull requests are welcome from members of the Macha server. If you are a member of the Macha Discord server, to contribute 
 a CS related resource to the library itself, please go to the hosted application at:
 
-[Python Anywhere](http://www.machalibrary.pythonanywhere.com/)
+[Python Anywhere](https://www.machalibrary.pythonanywhere.com/)
 
 ## Screenshots
 
-<img src="https://imgur.com/UtBiHaU" width="200"><img src="https://imgur.com/ypnl07w" width="400">
-<img src="https://imgur.com/L0am7oS" width="200">
-<img src="https://imgur.com/7qYbhyv" width="500"><img src="https://imgur.com/t4pfDzL" width="500">
+![iphone 6/7/8](https://imgur.com/UtBiHaU)
+![iphone 6/7/8](https://imgur.com/ypnl07w)
+![iphone XS](https://imgur.com/L0am7oS)
+![laptop lg](https://imgur.com/7qYbhyv)
+![laptop lg](https://imgur.com/t4pfDzL)
 
 ## Contact
 
-[lizzyjane340](https://github.com/lizzyjane340/)
+[https://github.com/lizzyjane340](https://github.com/lizzyjane340/)
 
 
 
