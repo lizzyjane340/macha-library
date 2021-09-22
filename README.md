@@ -50,19 +50,24 @@ a CS related resource to the library itself, please go to the hosted application
 
 ## Screenshots
 
-![iphone 6/7/8](https://imgur.com/UtBiHaU)
-![iphone 6/7/8](https://imgur.com/ypnl07w)
-![iphone XS](https://imgur.com/L0am7oS)
-![laptop lg](https://imgur.com/7qYbhyv)
-![laptop lg](https://imgur.com/t4pfDzL)
+![16143F02-7B05-4172-8125-BBDCC8C737D0_1_201_a](https://user-images.githubusercontent.com/75592024/134354277-4b0f47c9-adf0-484e-a10b-2b71fc2cd25d.jpeg)
+
+
+![4E43F24B-808A-4D35-9946-404BEC723C21_1_201_a](https://user-images.githubusercontent.com/75592024/134354314-8e2e8e6a-e2ac-48dc-b37c-16c430b95c08.jpeg)
+
+
+![47A5B761-B6F3-4C0A-8677-8E110F9CB33C_1_105_c](https://user-images.githubusercontent.com/75592024/134354637-e08397f7-4a31-4ac7-9cca-53eee756c4b7.jpeg)
+
+
+![9D470EF9-0F52-4651-ADCE-B53A28D154FC_1_105_c](https://user-images.githubusercontent.com/75592024/134353978-56dc6f5b-3284-4c33-8a22-df0cd1757053.jpeg)
+
+
+![FA3C024F-B0E5-42F5-9FB5-1C02870E7E5E_1_105_c](https://user-images.githubusercontent.com/75592024/134354095-cd2ecf71-310a-4bce-b028-639a3f617ece.jpeg)
+
 
 ## Contact
 
 [https://github.com/lizzyjane340](https://github.com/lizzyjane340/)
-
-
-
-
 
 
 
