@@ -11,7 +11,7 @@ class DevelopmentConfig(BaseConfig):
     FLASK_ENV = "development"
     FLASK_APP = "app.py"
     FLASK_DEBUG = 0
-    SECRET_KEY = "a711c87d1b96882ba8279062bdca3027"
+    SECRET_KEY = "secret_key"
     PERMANENT_SESSION_LIFETIME = timedelta(hours=3)
     SESSION_COOKIE_SECURE = False
     SESSION_COOKIE_HTTPONLY = False
@@ -25,7 +25,7 @@ class ProductionConfig(BaseConfig):
     TESTING = False
     FLASK_ENV = "production"
     FLASK_APP = "run.py"
-    SECRET_KEY = "a711c87d1b96882ba8279062bdca3027"
+    SECRET_KEY = "secret_key"
     PERMANENT_SESSION_LIFETIME = timedelta(hours=3)
     SESSION_COOKIE_SECURE = True
     SESSION_COOKIE_HTTPONLY = True
