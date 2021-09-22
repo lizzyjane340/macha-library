@@ -16,14 +16,14 @@
 }
 
 /* responsive font size */
-html { font-size: calc(0.6em + 0.7vw) }
+html { font-size: calc(0.7em + 0.7vw) }
 button { font-size: inherit }
 input { font-size: inherit }
 h4 { text-align: center }
 h6 { text-align:center }
 body { font-size: 0.8em }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 300px) and (max-height: 660px) {
     #back-background-block {
         height: 58vh;
     }
@@ -44,44 +44,114 @@ body { font-size: 0.8em }
         height: 58vh;
     }
 }
-
-@media only screen and (min-width: 350px) {
+/* for iphone 6 */
+@media only screen and (min-width: 350px) and (max-height: 815px) {
     #back-background-block {
-        height: 68vh;
+        height: 70vh;
     }
 
     #carouselExampleFade {
-        height: 68vh;
+        height: 70vh;
     }
 
     #carousel-inner {
-        height: 68vh;
+        height: 70vh;
     }
 
     #carousel-button {
-        height: 68vh;
+        height: 70vh;
     }
 }
+/* for iphone XS only */
+@media only screen and (min-width: 800px) and (max-height: 400px) {
+    #back-background-block {
+      height: 120vh;
+    }
 
+    #carouselExampleFade {
+        height: 120vh;
+    }
+
+    #carousel-inner {
+        height: 120vh;
+    }
+
+    #carousel-button {
+        height: 120vh;
+    }
+
+    #form {
+        height: 120vh;
+    }
+}
+/* for iphone 8 */
+@media only screen and (min-width: 660px) and (max-height: 820px){
+
+    #back-background-block {
+        height: 110vh;
+      }
+  
+      #carouselExampleFade {
+          height: 110vh;
+      }
+  
+      #carousel-inner {
+          height: 110vh;
+      }
+  
+      #carousel-button {
+          height: 110vh;
+      }
+  
+      #form {
+          height: 110vh;
+      }
+
+}
+
+/* for tablets */
+@media only screen and (min-width: 750px) and (max-height: 1300px) {
+        #back-background-block {
+          height: 68vh;
+        }
+    
+        #carouselExampleFade {
+            height: 68vh;
+        }
+    
+        #carousel-inner {
+            height: 68vh;
+        }
+    
+        #carousel-button {
+            height: 68vh;
+        }
+    
+        #form {
+            height: 68vh;
+        }
+    }
+
+/* for laptop 13" screen and larger */
 @media only screen and (min-width: 900px) {
     #back-background-block {
-      height: 84vh;
+      height: 78vh;
     }
 
     #carouselExampleFade {
-        height: 84vh;
+        height: 78vh;
     }
 
     #carousel-inner {
-        height: 84vh;
+        height: 78vh;
     }
 
     #carousel-button {
-        height: 84vh;
+        height: 78vh;
     }
 
     #form {
-        height: 84vh;
+        height: 78vh;
     }
 }
 
@@ -161,14 +231,13 @@ carousel { height: calc(100vh - 56px);}
 
 /* categories dropdown menu */
 #select-dropdown-menu {
-    font-size: 0.8em;
     padding-bottom: 0.5rem;
     padding-top: 0.5rem;
 }
 
 /* username and date text*/
 #dateBlock {
-    font-size: 0.7em;
+    font-size: 0.8em !important;
     font-weight: normal;
     color: white;
     background-color: rgb(99, 109, 117);
@@ -179,7 +248,7 @@ carousel { height: calc(100vh - 56px);}
 
 #username-text {
     font-weight: normal !important;
-    font-size: 0.8em;
+    font-size: 0.9em !important;
     background-color: rgb(99, 109, 117);
     color: white;
     font-weight: normal;
@@ -237,15 +306,6 @@ carousel { height: calc(100vh - 56px);}
     font-weight: normal;
     border-color: black;
     margin-left: 0.1rem;
-    margin-top: 0.1rem;
-    font-size: inherit;
-}
-
-/* select dropdown button */
-#btn2 {
-    font-weight: normal;
-    border-color: black;
-    margin-left: 0.4rem;
     margin-top: 0.1rem;
     font-size: inherit;
 }
@@ -321,5 +381,5 @@ carousel { height: calc(100vh - 56px);}
     background-image: url('/static/macha-library-wallpaper.jpeg');   
     background-repeat: no-repeat;
     background-size: cover; 
-    height: 65%;
+    height: 70%;
 }
