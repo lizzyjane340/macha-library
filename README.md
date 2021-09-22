@@ -1,7 +1,8 @@
-# macha-library
-Web application built with Python Flask, JS, SQL &amp; Bootstrap 5.
+# Macha Library
 
-## Macha Library
+# [Video Demo](https://www.youtube.com/watch?v=BK4Vb7WpGqE)
+
+## Description
 
 Macha Library is a web application for contributing, browsing and learning from Computer Science and Programming related
 online resources. The app was created for members of the Macha Discord server, and includes a user registration & login 
