@@ -135,23 +135,23 @@ body { font-size: 0.8em }
 /* for laptop 13" screen and larger */
 @media only screen and (min-width: 900px) {
     #back-background-block {
-      height: 78vh;
+      height: 86vh;
     }
 
     #carouselExampleFade {
-        height: 78vh;
+        height: 86vh;
     }
 
     #carousel-inner {
-        height: 78vh;
+        height: 86vh;
     }
 
     #carousel-button {
-        height: 78vh;
+        height: 86vh;
     }
 
     #form {
-        height: 78vh;
+        height: 86vh;
     }
 }
 
