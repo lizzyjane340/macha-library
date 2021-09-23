@@ -266,10 +266,11 @@ carousel { height: calc(100vh - 56px);}
     background-color: whitesmoke;     
     text-align: center;
     justify-content: center;
-    font-size: 1.1em;
+    font-size: 1em;
     position: absolute;
     vertical-align: middle;
-    padding: 2rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
 }
 
 #carousel-button {
