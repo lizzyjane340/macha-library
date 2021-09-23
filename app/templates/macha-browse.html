@@ -8,13 +8,15 @@
 <!--START library carousel content block-->
 <div class="carousel slide carousel-fade" id="carouselExampleFade">
   <div class="carousel-inner col-md-12 justify-content-center align-items-center" id="carousel-inner">
+<!--user message div-->
+      <p class="message-text"><br><h10>{{ message }}</h10><br></p> 
+<!--END carousel item ACTIVE ITEM-->
   {% for entry in entries %}
 
       {% if loop.index == 1 %}
 <!--START carousel item ACTIVE ITEM-->
     <div class="carousel-item active" data-bs-interval="false" id="carousel-item">
         <div class="container-fluid col-md-8 justify-content-center align-items-center" id="carousel-content">
-          <br>
 <!--carousel entry text content-->
         <div class="row justify-content-center align-items-center">
           <h4><a href="{{ entry['url'] }}" target="_blank" id="carousel-link">{{ entry['title'] }}</a><span class="badge badge-secondary" id="btn">{{ entry['username'] }}</span></h4>
@@ -42,23 +44,17 @@
             <button class="btn btn-light btn-sm my-2 my-sm-0" id="btn" type="submit">Delete</button>
           </form>
         </div>
+      {% endif %}
       </div>
-          {% endif %}
-<!--user message div-->
-        <div class="row justify-content-center align-items-center">
-          <p class="message-text"><br>{{ message }}<br></p> 
-        </div>  
-      </div>  
-<!--END carousel item ACTIVE ITEM-->
     </div>
-  </div> 
-    {% endif %}
+  </div>
+</div> 
+      {% endif %}
 
     {% if loop.index > 1 %}
 <!--START carousel item NEXT ITEM-->
   <div class="carousel-item" data-bs-interval="false" id="carousel-item">
       <div class="container-fluid col-md-8 justify-content-center align-items-center" id="carousel-content">
-        <br>
         <div class="row justify-content-center align-items-center">
 <!--carousel entry text content-->
             <h4><a href="{{ entry['url'] }}" target="_blank" id="carousel-link">{{ entry['title'] }}</a><span class="badge badge-secondary" id="btn">{{ entry['username'] }}</span></h4>
@@ -87,18 +83,14 @@
           </form>
         </div>
           {% endif %}
-          <!--user message div-->
-        <div class="row justify-content-center align-items-center">
-          <p class="message-text"><br>{{ message }}<br></p> 
-        </div>  
+        </div>
       </div>
-    </div>       
 <!--END carousel item NEXT ITEM-->   
-  </div>
-</div> 
-    {% endif %}
+  </div> 
+</div>
+{% endif %}
 
-    {% endfor %}
+{% endfor %}
 <!-- START carousel button controls-->
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" id="carousel-button">
       <span class="carousel-control-prev" aria-hidden="true" id="carousel-icon"></span>
