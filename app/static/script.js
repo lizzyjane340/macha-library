@@ -9,14 +9,14 @@
     bottom: '32px', 
     right: '32px', 
     left: 'unset', 
-    time: '0.5s', 
+    time: '0.7s', 
     mixColor: '#fff', 
     backgroundColor: '#fff', 
     buttonColorDark: '#000',  
     buttonColorLight: '#FFF', 
     saveInCookies: true, 
     label: '🌓', 
-    autoMatchOsTheme: true
+    autoMatchOsTheme: false
     } 
  
     const darkmode = new Darkmode(options);
