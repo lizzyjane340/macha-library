@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-100">
+<html lang="en">
 
   <head>
 <!-- utf-8 character encoding meta tag -->
@@ -125,6 +125,13 @@
         </svg></h1>
     </div>
 <!-- END central layout block-->
+
+<!--START static resource display-->
+<div class="container-fluid col-md-12 justify-content-center align-items-center">
+    {% block main_static %}{% endblock %}
+</div>
+<!--END static resource display-->
+
 <!--START Footer -->
   <footer class="footer col-md-12" id="footer">
     <div class="text-center p-1">
@@ -132,9 +139,9 @@
       <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
     </div>
   </footer>
-<!--END Footer --> 
-  <div class="container-fluid col-md-12 d-lg-none" id="tablet-fill-div"></div>
 </div>
+<!--END Footer --> 
+ 
 <!--END page-->
   </body> 
 </html>
