@@ -8,14 +8,17 @@
 <!--START form for main content block-->
 <form action="/macha-entry" method="POST" enctype="multipart/form-data">
   <div class="container-fluid col-md-12 justify-content-center text-center" aria-label="entry-form" id="form">
+    <!--error message div-->
+  <br>
+  <p id="message-text"><b>{{ message }}</b></p> 
+  <br>
 <!--title input-->
     <div class="row justify-content-center align-items-center">
       <div class="form-group col-md-6 text-center" aria-label="text field for entry title">
-        <br>
         <p class="text-justify" id="text-body"><h4>Contribute</h4></p>
-        <input autocomplete="off" autofocus class="form-control" name="entry-title" placeholder="Title" type="text" aria-describedby="titleBlock"> 
-        <input autocomplete="off" autofocus class="form-control" name="entry-link" placeholder="URL" type="text" aria-describedby="linkBlock"> 
-        <textarea class="form-control" id="textAreaExample3" name="entry-body" placeholder="Description" rows="2"></textarea>  
+        <input autocomplete="off" autofocus class="form-control" name="entry-title" placeholder="Title" type="text" aria-describedby="titleBlock" id="entryTitle" required minlength="3" maxlength="100"> 
+        <input autocomplete="off" autofocus class="form-control" name="entry-link" placeholder="URL" type="text" aria-describedby="linkBlock" id="entryLink" required minlength="10" maxlength="300"> 
+        <textarea class="form-control" name="entry-body" placeholder="Description" rows="2" id="entryDesc" required minlength="10" maxlength="300"></textarea>  
         <span id="form-text-other">Select categories:</span>
       </div>
     </div>
@@ -45,8 +48,6 @@
       <button name="submit" class="btn btn-success btn-sm" type="submit" value="submit" id="btn">Submit</button>  
     </div>
   </div>
-  <!--error message div-->
-    <p id="message-text"><b>{{ message }}</b></p> 
 </div>
 </form>
 <!--END form for main content block-->

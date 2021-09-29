@@ -14,26 +14,25 @@
         <br>
         <p class="text-justify" id="text-body"><h4>Register</h4></p>
         <br>
-          <input autocomplete="off" autofocus class="form-control" name="createUsername" placeholder="Create Username" type="text" aria-describedby="usernameBlock">
+          <input autocomplete="off" autofocus class="form-control" name="createUsername" placeholder="Create Username" type="text" aria-describedby="usernameBlock" id="usernameReg" required minlength="3" maxlength="15">
         <br>
 <!--create password/confirm password text input-->
-          <input autocomplete="off" autofocus class="form-control" name="createPassword" placeholder="Create Password" type="password" aria-describedby="passwordBlock">
-          <input autocomplete="off" autofocus class="form-control" name="confirmPassword" placeholder="Re-Type Password" type="password" aria-describedby="passwordBlock">   
+          <input autocomplete="off" autofocus class="form-control" name="createPassword" placeholder="Create Password" type="password" aria-describedby="passwordBlock" id="passwordReg1" required minlength="8" maxlength="30">
+          <input autocomplete="off" autofocus class="form-control" name="confirmPassword" placeholder="Re-Type Password" type="password" aria-describedby="passwordBlock" id="passwordReg2" required minlength="8" maxlength="30">   
         <div id="formHelpBlock">
           <br>
-            Password should contain minimum 8 characters, letters, numbers & special characters, no spaces. Username should contain 8-20 characters, letters & numbers, no spaces.
+            Password should contain 8 - 30 characters, letters, numbers & special characters, no spaces. Username should contain 3-15 characters, letters & numbers, no spaces.
         </div>
-        <br>
+<!--user message div-->
+      <p class="message-text"><b>{{ message }}</b></p>
       </div>
     </div>
 <!--form submit button input-->
     <div class="row justify-content-center align-items-center">
       <div class="form-group col-md-6 text-center">
         <button name="submit" class="btn btn-success" type="submit" value="submit" id="btn">Submit</button>       
-      </div>
+      </div> 
     </div>
-<!--user message div-->
-        <p class="message-text"><br><b>{{ message }}</b></p> 
   </div>
 </form>
 <!-- END register form for main block-->
