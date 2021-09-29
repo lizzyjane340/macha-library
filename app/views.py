@@ -39,7 +39,7 @@ def login():
             session.modified = True
 
             message = "Login successful"
-            return render_template("macha-login.html", message=message, categories=categories)
+            return render_template("macha-default.html", message=message, categories=categories)
 
         conn.close()
 
@@ -77,14 +77,14 @@ def register():
 
         username = request.form.get('createUsername')
 
-        if (len(username) < 8 or len(username) > 20):
-            message = "Username should be 8 - 20 characters"
+        if (len(username) < 3 or len(username) > 15):
+            message = "Username should be 3 - 15 characters"
             return render_template("macha-register.html", message=message, categories=categories)
 
         pw = request.form.get('createPassword')
 
-        if (len(pw) < 8):
-            message = "Password should be minimum 8 characters"
+        if (len(pw) < 8 or len(pw) > 30):
+            message = "Password should be 8 - 30 characters"
             return render_template("macha-register.html", message=message, categories=categories)
 
         for char in username:
@@ -135,8 +135,8 @@ def entry():
     if request.method == "POST":
 
         if not session.get('user'):
-            message = "You should be logged in to submit this form"
-            return render_template("macha-entry.html", categories=categories, message=message)
+            message = "Please log in to contribute"
+            return render_template("macha-login.html", categories=categories, message=message)
 
         if not request.form.get('entry-title') or not request.form.get('entry-link') or not request.form.get('entry-body'):
             message = "All fields should be completed"
@@ -146,6 +146,18 @@ def entry():
         url = request.form.get('entry-link')
         desc = request.form.get('entry-body')
         username = session['user']
+
+        if len(title) > 100:
+            message = "Character limit exceeded for title - max 100 characters"
+            return render_template('macha-browse.html', message=message, categories=categories)
+
+        if len(url) > 300:
+            message = "Character limit exceeded for URL"
+            return render_template('macha-browse.html', message=message, categories=categories)
+        
+        if len(desc) > 300:
+            message = "Character limit exceeded for description - max 300 characters"
+            return render_template('macha-browse.html', message=message, categories=categories)
 
 # currently no character limits on text inputs - this is TODO
         conn = sqlite3.connect('library.db')
@@ -184,6 +196,10 @@ def entry():
         row = cursor.fetchone()
         entries_table_id = row[0]
 
+        if not request.form.getlist('options'): 
+            message = "Please choose a category"
+            return render_template("macha-browse.html", message=message, categories=categories)
+
         category_selected = request.form.getlist('options')
 
         for item in category_selected:
@@ -198,7 +214,11 @@ def entry():
 
     else:
 
-        return render_template("macha-entry.html", categories=categories)
+        if not session.get('user'):
+            message = "Please log in to contribute"
+            return render_template("macha-login.html", message=message, categories=categories)
+        else:
+            return render_template("macha-entry.html", categories=categories)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -208,10 +228,6 @@ def browse():
     entries = []
 
     if request.method == "POST":
-
-        if not session.get('user'):  
-            message = "Please log in to browse"           
-            return render_template("macha-login.html", categories=categories, message=message)
  
         conn = sqlite3.connect('library.db')
         cursor = conn.cursor()
@@ -322,8 +338,8 @@ def delete():
         row = cursor.fetchone()
 
         if row == None:
-            message = "Resource already deleted"
-            return render_template("macha-browse.html", categories=categories, message=message)
+            message = "Resource deleted - select category to browse"
+            return render_template("macha-default.html", categories=categories, message=message)
 
         entry_id = row[0]
 
@@ -332,9 +348,9 @@ def delete():
         conn.commit()
         conn.close()
 
-        message = "Resource deleted"
+        message = "Resource deleted - select category to browse"
 
-        return render_template("macha-browse.html", categories=categories, message=message)
+        return render_template("macha-default.html", categories=categories, message=message)
 
     else:
         
