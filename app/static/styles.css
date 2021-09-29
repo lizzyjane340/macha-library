@@ -43,6 +43,10 @@ body { font-size: 0.8em }
     #form {
         height: 58vh;
     }
+
+    #resource-display-div {
+        height: 58vh;
+    }
 }
 /* for iphone 6 */
 @media only screen and (min-width: 350px) and (max-height: 815px) {
@@ -59,6 +63,14 @@ body { font-size: 0.8em }
     }
 
     #carousel-button {
+        height: 70vh;
+    }
+
+    #form {
+        height: 70vh;
+    }
+
+    #resource-display-div {
         height: 70vh;
     }
 }
@@ -81,6 +93,10 @@ body { font-size: 0.8em }
     }
 
     #form {
+        height: 120vh;
+    }
+
+    #resource-display-div {
         height: 120vh;
     }
 }
@@ -107,6 +123,10 @@ body { font-size: 0.8em }
           height: 110vh;
       }
 
+      #resource-display-div {
+        height: 110vh;
+    }
+
 }
 
 /* for tablets */
@@ -130,28 +150,36 @@ body { font-size: 0.8em }
         #form {
             height: 68vh;
         }
+
+        #resource-display-div {
+            height: 68vh;
+        }
     }
 
 /* for laptop 13" screen and larger */
 @media only screen and (min-width: 900px) {
     #back-background-block {
-      height: 86vh;
+      height: 92vh;
     }
 
     #carouselExampleFade {
-        height: 86vh;
+        height: 92vh;
     }
 
     #carousel-inner {
-        height: 86vh;
+        height: 92vh;
     }
 
     #carousel-button {
-        height: 86vh;
+        height: 92vh;
     }
 
     #form {
-        height: 86vh;
+        height: 92vh;
+    }
+
+    #resource-display-div {
+        height: 92vh;
     }
 }
 
@@ -187,6 +215,22 @@ carousel { height: calc(100vh - 56px);}
     font-weight: normal;
 }
 
+input:invalid:required {
+    background-image: linear-gradient(to left, rgb(172, 70, 70), white)
+}
+
+input:valid {
+    border: 0.5rem gray;
+}
+
+textarea:invalid:required {
+    background-image: linear-gradient(to left, rgb(172, 70, 70), white)
+}
+
+textarea:valid {
+    border: 0.5rem gray;
+}
+
 #nav {
     background-color: rgb(195, 235, 195) !important;
     background-size: cover;
@@ -208,8 +252,6 @@ carousel { height: calc(100vh - 56px);}
     background-repeat: no-repeat;
     background-size: cover;
     font-size: 0.9em;
-    padding: 0.2rem;
-    padding-bottom: 0.4rem;
     width: 100%;
 }
 
@@ -302,6 +344,27 @@ carousel { height: calc(100vh - 56px);}
     font-size: 0.9em;
 }
 
+#static-display-div {
+    background-color: whitesmoke !important;
+    margin: 1em;
+    border-style: solid;
+    border-radius: 1em;
+    text-align: center;
+    border-color: rgb(195, 235, 195);
+    font-size: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
+
+/* image to fill base of md size screens */
+#static-display-bg-div {
+    background-image: url('/static/macha-library-wallpaper.jpeg');   
+    background-attachment: fixed;
+    background-repeat: repeat;
+    overflow: auto;
+}
+
 /* all buttons */
 #btn {
     font-weight: normal;
@@ -320,6 +383,10 @@ carousel { height: calc(100vh - 56px);}
     padding-top: 0rem;
     padding-bottom: 0rem;
     font-weight: normal;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
 }
 
 /* text formatting and sizes */
@@ -333,6 +400,9 @@ carousel { height: calc(100vh - 56px);}
     padding-right: 0.3rem;
     padding-left: 0.3rem;
     text-align: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
 }
 
 #text-body-default {
@@ -353,6 +423,9 @@ carousel { height: calc(100vh - 56px);}
     font-weight: bold !important;
     text-align: center;
     color: black;
+    justify-self: center;
+    align-self: center;
+    justify-content: center;
 }
 
 #formHelpBlock {
@@ -375,12 +448,4 @@ carousel { height: calc(100vh - 56px);}
     background-color: rgb(195, 235, 195);
     padding: 0;
     z-index: 1;
-}
-
-/* image to fill base of md size screens */
-#tablet-fill-div {
-    background-image: url('/static/macha-library-wallpaper.jpeg');   
-    background-repeat: no-repeat;
-    background-size: cover; 
-    height: 70%;
 }
