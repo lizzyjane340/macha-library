@@ -17,9 +17,9 @@
     <title>{% block title %}{% endblock %}</title>
 <!-- javascript bootstrap CDN-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    </script>
+
 <!-- darkmode.js from jsdelivr CDN-->
-  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
 
 <!--custom script defer load-->
   <script type="text/javascript" src="/static/script.js" defer></script>
@@ -40,19 +40,19 @@
         <ul class="navbar-nav me-md-auto col order-0">
           <a class="nav-item nav-link active" href="{{ url_for('register') }}">Register</a>
           <a class="nav-item nav-link active" href="{{ url_for('entry') }}">Contribute</a>
-          <a class="nav-item nav-link active" href="{{ url_for('browse') }}">About</a>
+          <a class="nav-item nav-link active" href="{{ url_for('default') }}">About</a>
 <!--login/logout toggle button-->
-      {% if 'user' in session %}
-      <form class="form-inline" action="/macha-logout" method="POST"> 
-        <button class="btn btn-secondary btn-sm my-2 my-sm-0" id="btn" type="submit">Logout</button>
-      </form>
-      {% endif %}   
-      {% if 'user' not in session %}
-      <form class="form-inline" action="/macha-login" method="POST"> 
-        <button class="btn btn-secondary btn-sm my-2 my-sm-0" id="btn" type="submit">Login</button>
-      </form>
-      {% endif %}
-        </ul>
+        {% if 'user' in session %}
+        <form class="form-inline" action="/macha-logout" method="POST"> 
+          <button class="btn btn-secondary btn-sm my-2 my-sm-0" id="btn" type="submit">Logout</button>
+        </form>
+        {% endif %}   
+        {% if 'user' not in session %}
+        <form class="form-inline" action="/macha-login" method="POST"> 
+          <button class="btn btn-secondary btn-sm my-2 my-sm-0" id="btn" type="submit">Login</button>
+        </form>
+        {% endif %}
+      </ul>
 <!--START navbar search form--> 
         <form action="/macha-search" method="POST" class="d-flex ms-auto order-5">
           <input class="form-control mr-sm-2" type="search" name="text-search" placeholder="Find macha wisdom" aria-label="Search">
@@ -76,7 +76,7 @@
       <div class="input-group" id="select-dropdown-menu">
         <select class="custom-select" name="category">
           {% for cat in categories %}
-          <option value="{{ cat }}"><span class="select-dropdown-text">{{ cat }}</span></option>
+          <option value="{{ cat }}">{{ cat }}</option>
           {% endfor %}
         </select>
         <button class="btn btn-secondary btn-sm my-1 my-sm-0" type="submit" name="submit" value="submit" id="btn">Select Category</button>
@@ -84,6 +84,7 @@
     </form>
   </div>
 </div>
+{% if bool_nosearch == True %}
 <!--START central layout block-->
 <div class="container-fluid col-md-12 justify-content-between align-items-between" id="back-background-block">
   <div class="row h-100 justify-content-between align-items-between"> 
@@ -103,11 +104,11 @@
           <path d="M2.5 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6zm0 3a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1h-6zm0 3a.5.5 0 0 0 0 1h11a.5.5 0 0 0 0-1h-11zm10.113-5.373a6.59 6.59 0 0 0-.445-.275l.21-.352c.122.074.272.17.452.287.18.117.35.26.51.428.156.164.289.351.398.562.11.207.164.438.164.692 0 .36-.072.65-.216.873-.145.219-.385.328-.721.328-.215 0-.383-.07-.504-.211a.697.697 0 0 1-.188-.463c0-.23.07-.404.211-.521.137-.121.326-.182.569-.182h.281a1.686 1.686 0 0 0-.123-.498 1.379 1.379 0 0 0-.252-.37 1.94 1.94 0 0 0-.346-.298zm-2.168 0A6.59 6.59 0 0 0 10 6.352L10.21 6c.122.074.272.17.452.287.18.117.35.26.51.428.156.164.289.351.398.562.11.207.164.438.164.692 0 .36-.072.65-.216.873-.145.219-.385.328-.721.328-.215 0-.383-.07-.504-.211a.697.697 0 0 1-.188-.463c0-.23.07-.404.211-.521.137-.121.327-.182.569-.182h.281a1.749 1.749 0 0 0-.117-.492 1.402 1.402 0 0 0-.258-.375 1.94 1.94 0 0 0-.346-.3z"/>
           </svg></h1>
     </div>
-<!--START main content block-->
+<!--START carousel content block-->
     <div class="container-fluid col-md-8 justify-content-center align-items-center" id="main-content-block">    
       {% block main %}{% endblock %}
     </div>
-<!--END main content block-->
+<!--END carousel content block-->
     <div class="container-fluid col-md-2" aria-label="How To Contribute" id="side-text-block">
       <br><br>
         <h1><svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor" class="bi bi-blockquote-left" viewBox="0 0 16 16">
@@ -125,11 +126,14 @@
         </svg></h1>
     </div>
 <!-- END central layout block-->
+{% endif %}
 
 <!--START static resource display-->
-<div class="container-fluid col-md-12 justify-content-center align-items-center">
+{% if bool_nosearch == False %}
+<div class="container-fluid col-md-12 justify-content-center align-items-center" id="static-display-bg-div">
     {% block main_static %}{% endblock %}
 </div>
+{% endif %}
 <!--END static resource display-->
 
 <!--START Footer -->

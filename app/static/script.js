@@ -34,55 +34,69 @@ document.getElementById('spanDate').innerHTML = "session: " + date.toUTCString()
 // file upload alert
 let uploadFile = document.getElementById('entry-file');
 
-uploadFile.addEventListener('change', () => {
+if (uploadFile != null) {
+  uploadFile.addEventListener('change', () => {
     document.getElementById('uploadLabel').innerHTML = "File Uploaded";
-});
+  });
+}
 
 // input length validation for forms
 const loginUsername = document.getElementById('loginUsername');
 
-loginUsername.addEventListener('input', () => {
+if (loginUsername != null) {  
+  loginUsername.addEventListener('input', () => {
   if (loginUsername.validity.invalid) {
     loginUsername.setCustomValidity = "Username should be 3 to 15 characters";
   } else {
     loginUsername.setCustomValidity("");
   }
-});
+  });
+}
 
 const loginPassword = document.getElementById('loginPassword');
 
-loginPassword.addEventListener('input', () => {
+if (loginPassword != null) {
+  loginPassword.addEventListener('input', () => {
     if (!loginPassword.checkValidity()) {
       loginPassword.innerHTML = loginPassword.validationMessage;
     } 
   });
+}
 
-  const usernameReg = document.getElementById('usernameReg');
+const usernameReg = document.getElementById('usernameReg');
 
+if (usernameReg != null) {
   usernameReg.addEventListener('input', () => {
     if (usernameReg.checkValidity()) {
       usernameReg.innerHTML = usernameReg.validationMessage;
     } 
   });
+}
 
-  const passwordReg1 = document.getElementById('passwordReg1');
-  const passwordReg2 = document.getElementById('passwordReg2');
+const passwordReg1 = document.getElementById('passwordReg1');
+const passwordReg2 = document.getElementById('passwordReg2');
 
+if (passwordReg1 != null) {
   passwordReg1.addEventListener('input', () => {
       if (passwordReg1.checkValidity()) {
           passwordReg1.innerHTML = passwordReg1.validationMessage;
       } 
   });
+}
 
+if (passwordReg2 != null){
   passwordReg2.addEventListener('input', () => {
     if (passwordReg2.checkValidity()) {
         passwordReg2.innerHTML = passwordReg2.validationMessage;
     } 
 });
+}
 
 const entryTitle = document.getElementById('entryTitle');
 const entryLink = document.getElementById('entryLink');
 const entryDesc = document.getElementById('entryDesc');
+
+if (entryTitle, entryLink, entryDesc != null) {
 
 entryTitle.addEventListener('input', () => {
     if (entryTitle.checkValidity()) {
@@ -101,6 +115,7 @@ entryDesc.addEventListener('input', () => {
         entryDesc.innerHTML = entryDesc.validationMessage;
     } 
 });
+}
 
 //const catCheck = document.getElementById('catCheck');
 // TODO checkbox validation entry form

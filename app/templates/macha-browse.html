@@ -6,19 +6,19 @@
 
 {% block main %}
 <!--START library carousel content block-->
-<div class="carousel slide carousel-fade" id="carouselExampleFade">
+<div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carouselExampleFade">
   <div class="carousel-inner col-md-12 justify-content-center align-items-center" id="carousel-inner">
 <!--user message div-->
-      <p class="message-text"><br>{{ message }}<br></p> 
+      <p class="message-text"><br><b>{{ message }}</b><br></p> 
 <!--END carousel item ACTIVE ITEM-->
   {% for entry in entries %}
 
       {% if loop.index == 1 %}
 <!--START carousel item ACTIVE ITEM-->
-    <div class="carousel-item active" data-bs-interval="false" id="carousel-item">
+    <div class="carousel-item active" data-bs-interval="10000" id="carousel-item">
         <div class="container-fluid col-md-8 justify-content-center align-items-center" id="carousel-content">
 <!--carousel entry text content--> 
-          {% if session['user'] == entry['username'] %}
+      {% if session['user'] == entry['username'] %}
         <div class="row justify-content-center align-items-center">
           <form class="form-inline" action="/delete-entry" method="POST"> 
             <br>
@@ -51,9 +51,9 @@
 </div> 
       {% endif %}
 
-    {% if loop.index > 1 %}
+  {% if loop.index > 1 %}
 <!--START carousel item NEXT ITEM-->
-  <div class="carousel-item" data-bs-interval="false" id="carousel-item">
+  <div class="carousel-item" data-bs-slide="10000" id="carousel-item">
       <div class="container-fluid col-md-8 justify-content-center align-items-center" id="carousel-content">
         {% if session['user'] == entry['username'] %}
         <div class="row justify-content-center align-content-center">
@@ -110,12 +110,13 @@
 
 
 {% block main_static %}
+
 {% for entry in entries %}
-<div class="container-fluid col-md-12 justify-content-center align-items-center" id="static-display-bg-div">
+<div class="container-fluid col-md-12 justify-content-center align-items-center" id="static-display-bg-div"> 
   <div class="row h-100 justify-content-center align-items-center">
   <div class="container-fluid col-md-10 justify-content-center align-items-center" id="static-display-div">  
     <br>
-        {% if session['user'] == entry['username'] %}
+      {% if session['user'] == entry['username'] %}
         <div class="row justify-content-center align-items-center">
           <form class="form-inline" action="/delete-entry" method="POST"> 
             <br>

@@ -209,12 +209,6 @@ carousel { height: calc(100vh - 56px);}
     font-weight: normal;
 }
 
-.select-dropdown-text::placeholder {
-    color:black;
-    font-size: 0.7em;
-    font-weight: normal;
-}
-
 input:invalid:required {
     background-image: linear-gradient(to left, rgb(172, 70, 70), white)
 }
@@ -250,6 +244,7 @@ textarea:valid {
     background-image: url('/static/macha-library-wallpaper.jpeg');   
     background-attachment: fixed;
     background-repeat: no-repeat;
+    border-bottom: 0.08em black solid;
     background-size: cover;
     font-size: 0.9em;
     width: 100%;
@@ -346,7 +341,6 @@ textarea:valid {
 
 #static-display-div {
     background-color: whitesmoke !important;
-    margin: 1em;
     border-style: solid;
     border-radius: 1em;
     text-align: center;
@@ -356,12 +350,13 @@ textarea:valid {
     padding-right: 3em;
 }
 
-
 /* image to fill base of md size screens */
 #static-display-bg-div {
     background-image: url('/static/macha-library-wallpaper.jpeg');   
     background-attachment: fixed;
-    background-repeat: repeat;
+    padding: 1em;
+    width: 100%;
+    height: 100%;
     overflow: auto;
 }
 
