@@ -8,11 +8,24 @@ from flask import redirect, render_template, request, session
 from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.utils import secure_filename
 
+@app.route("/macha-default", methods=["GET"])
+def default():
+
+    categories = helpers.category_list()
+    bool_nosearch = True
+
+    if request.method == "GET":
+
+        message = ""
+
+        return render_template('macha-default.html', bool_nosearch=bool_nosearch, message=message, categories=categories)
+
 
 @app.route("/macha-login", methods=["GET", "POST"])
 def login():
 
     categories = helpers.category_list() 
+    bool_nosearch = True
 
     if request.method == "POST":
 
@@ -20,8 +33,8 @@ def login():
         cursor = conn.cursor()
 
         if not request.form.get('username') or not request.form.get('password'):
-            message = "Please enter both username and password"
-            return render_template("macha-login.html", message=message)
+            message = ""
+            return render_template("macha-login.html", bool_nosearch=bool_nosearch, categories=categories, message=message)
 
         pw = request.form.get('password')
         username = request.form.get('username')
@@ -38,61 +51,74 @@ def login():
             session['user'] = username
             session.modified = True
 
-            message = "Login successful"
-            return render_template("macha-default.html", message=message, categories=categories)
+            conn.close()
 
-        conn.close()
+            message = "You are now logged in"
 
-        message = "Login not successful"
-        return render_template("macha-login.html", message=message, categories=categories)
+            entries = helpers.get_default_entries()
+            categories = helpers.category_list()
+
+            return render_template("macha-browse.html", bool_nosearch=bool_nosearch, message=message, entries=entries, categories=categories)
+
+        else:
+            message = "Login not successful - try again!"
+            bool_nosearch = True
+
+            return render_template("macha-login.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
     else:
+        message = ""
 
-        return render_template("macha-login.html", categories=categories)
+        bool_nosearch = True
+
+        return render_template("macha-login.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
 @app.route("/macha-logout", methods=["POST"])
 def logout():
 
     categories = helpers.category_list()
+    bool_nosearch = True
+    entries = helpers.get_default_entries()
 
     if request.method == "POST":
 
 # removing user session from flask session variable
         session.pop('user', None)
 
-        message = "Logged out"
-        return render_template('macha-login.html', message=message, categories=categories)
+        message = "You are logged out"
+        return render_template('macha-browse.html', bool_nosearch=bool_nosearch, entries=entries, message=message, categories=categories)
     
     
 @app.route("/macha-register", methods=["GET", "POST"])
 def register():
 
     categories = helpers.category_list()
+    bool_nosearch = True
 
     if request.method == "POST":
 
         if not request.form.get('createUsername') or not request.form.get('createPassword'):
             message = "Username & password fields must not be blank"
-            return render_template("macha-register.html", message=message)
+            return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
         username = request.form.get('createUsername')
 
         if (len(username) < 3 or len(username) > 15):
             message = "Username should be 3 - 15 characters"
-            return render_template("macha-register.html", message=message, categories=categories)
+            return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
         pw = request.form.get('createPassword')
 
         if (len(pw) < 8 or len(pw) > 30):
             message = "Password should be 8 - 30 characters"
-            return render_template("macha-register.html", message=message, categories=categories)
+            return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
         for char in username:
             if (char >= 'a' and char <= 'z') or (char >= 'A' and char <= 'Z') or (char >= '0' and char <= '9'):
                 continue
             else:
                 message = "Username should contain only letters or digits"
-                return render_template("macha-register.html", message=message, categories=categories)
+                return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
         conn = sqlite3.connect('library.db')
         cursor = conn.cursor()
@@ -105,42 +131,43 @@ def register():
         row = cursor.fetchone()
 
         if row is not None:
-            message = "Username already exists"
-            return render_template("macha-register.html", message=message, categories=categories)
+            message = "Username already exists - please try again!"
+            return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
 # hashing password with werkzeug module and storing in database
         hash = generate_password_hash(pw)
 
         if (pw != request.form.get('confirmPassword')):
             message = "Password and Password Confirmation do not match"
-            return render_template("macha-register.html", message=message, categories=categories)
+            return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
         else:
             conn.execute(f"INSERT INTO users (username, pwd_hash) VALUES (?, ?)", (username, hash))
             conn.commit()
             conn.close()
 
-        message = "Registration successful"
-        return render_template("macha-login.html", message=message, categories=categories)
+        message = "Registration successful - please log in to browse"
+        return render_template("macha-login.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
     else:
         message = ""
-        return render_template("macha-register.html", message=message, categories=categories)
+        return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
 
 @app.route("/macha-entry", methods=["GET", "POST"])
 def entry():
 
     categories = helpers.category_list()
+    bool_nosearch = True
 
     if request.method == "POST":
 
         if not session.get('user'):
             message = "Please log in to contribute"
-            return render_template("macha-login.html", categories=categories, message=message)
+            return render_template("macha-login.html", bool_nosearch=bool_nosearch, categories=categories, message=message)
 
         if not request.form.get('entry-title') or not request.form.get('entry-link') or not request.form.get('entry-body'):
             message = "All fields should be completed"
-            return render_template("macha-entry.html", categories=categories, message=message)
+            return render_template("macha-entry.html", bool_nosearch=bool_nosearch, categories=categories, message=message)
 
         title = request.form.get('entry-title')
         url = request.form.get('entry-link')
@@ -149,15 +176,15 @@ def entry():
 
         if len(title) > 100:
             message = "Character limit exceeded for title - max 100 characters"
-            return render_template('macha-browse.html', message=message, categories=categories)
+            return render_template('macha-entry.html', bool_nosearch=bool_nosearch, message=message, categories=categories)
 
         if len(url) > 300:
-            message = "Character limit exceeded for URL"
-            return render_template('macha-browse.html', message=message, categories=categories)
+            message = "Character limit exceeded for URL - max 300 characters"
+            return render_template('macha-entry.html', bool_nosearch=bool_nosearch, message=message, categories=categories)
         
         if len(desc) > 300:
             message = "Character limit exceeded for description - max 300 characters"
-            return render_template('macha-browse.html', message=message, categories=categories)
+            return render_template('macha-entry.html', bool_nosearch=bool_nosearch, message=message, categories=categories)
 
 # currently no character limits on text inputs - this is TODO
         conn = sqlite3.connect('library.db')
@@ -181,7 +208,8 @@ def entry():
             img_file = None
 
         cursor.execute("""CREATE TABLE IF NOT EXISTS entries (id INTEGER CONSTRAINT "UNIQUE" PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, 
-                            title TEXT, url TEXT, body TEXT, image BLOB, datetime STRING NOT NULL, user_id INTEGER NOT NULL);""")
+                            title TEXT, url TEXT, body TEXT, image BLOB, datetime STRING NOT NULL, user_id INTEGER NOT NULL,
+                            filename STRING, mimetype STRING);""")
         conn.commit()
 
         cursor.execute("""CREATE TABLE IF NOT EXISTS categories (id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL, 
@@ -197,8 +225,8 @@ def entry():
         entries_table_id = row[0]
 
         if not request.form.getlist('options'): 
-            message = "Please choose a category"
-            return render_template("macha-browse.html", message=message, categories=categories)
+            message = "Category field is required"
+            return render_template("macha-entry.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
         category_selected = request.form.getlist('options')
 
@@ -206,19 +234,26 @@ def entry():
             cursor.execute(f"INSERT INTO categories (entry_id, category) VALUES (?, ?)", (entries_table_id, item))
             conn.commit()
 
-        conn.close()
+        entries = helpers.get_default_entries()
         
         message = "Upload Successful - hooray!"
 
-        return render_template("macha-entry.html", categories=categories, message=message)
+        return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
     else:
 
         if not session.get('user'):
+
+            entries = helpers.get_default_entries()
+
             message = "Please log in to contribute"
-            return render_template("macha-login.html", message=message, categories=categories)
+
+            return render_template("macha-login.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
         else:
-            return render_template("macha-entry.html", categories=categories)
+
+            message = ""
+
+            return render_template("macha-entry.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -226,8 +261,14 @@ def browse():
 
     categories = helpers.category_list()
     entries = []
+    bool_nosearch = True
 
     if request.method == "POST":
+
+        if not session.get('user'):
+            entries = helpers.get_default_entries()
+            message = "Please log in to browse by category"
+            return render_template("macha-browse.html", bool_nosearch=bool_nosearch, entries=entries, categories=categories, message=message)
  
         conn = sqlite3.connect('library.db')
         cursor = conn.cursor()
@@ -238,12 +279,12 @@ def browse():
         entry_ids_by_category = cursor.fetchall()
 
         if len(entry_ids_by_category) < 1:
-            return render_template('macha-default.html', categories=categories, entries=entries)
+            return render_template('macha-browse.html', bool_nosearch=bool_nosearch, categories=categories, entries=entries)
 
         for item in entry_ids_by_category:
 
             entry_id = item[0]      
-            cursor.execute("SELECT title, url, body, user_id, datetime, mimetype, image FROM entries WHERE id=?", (entry_id,))
+            cursor.execute("SELECT * FROM entries WHERE id=?", (entry_id,))
             data = cursor.fetchone()
 
 # blob image data decoded in helpers.py
@@ -254,19 +295,27 @@ def browse():
         conn.close()
 
         message = ""
-                    
-        return render_template("macha-browse.html", categories=categories, entries=entries, message=message)
+
+        bool_nosearch = False
+                   
+        return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
     else:
 
+        entries = helpers.get_default_entries()
+
         message = ""
                                     
-        return render_template("macha-default.html", categories=categories, message=message)
+        return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
 @app.route("/macha-search", methods=["GET", "POST"])
 def search():
 
     categories = helpers.category_list()
+    bool_nosearch = True
+    
+    conn = sqlite3.connect('library.db')
+    cursor = conn.cursor()
 
     if request.method == "POST":
 
@@ -276,56 +325,77 @@ def search():
         if not session.get('user'):
 
             message = "Please log in to search the library"
-            return render_template("macha-login.html", categories=categories, message=message)
+            return render_template("macha-login.html", bool_nosearch=bool_nosearch, categories=categories, message=message)
 
 # searching database using SQL like query - this functionality should be improved upon
         search = request.form.get('text-search')
         search = '%' + search + '%'
 
-        conn = sqlite3.connect('library.db')
-        cursor = conn.cursor()
+        entry_id_list = []
+
+    # at the moment this turns up duplicate items - need to improve the code
+
+        cursor.execute("SELECT id FROM entries WHERE title LIKE (?)", (search,))
+        ids = cursor.fetchall()
+        entry_id_list.append(ids)
+
+        cursor.execute("SELECT id FROM entries WHERE body LIKE (?)", (search,))
+        ids = cursor.fetchall()
+        entry_id_list.append(ids)
+
+        cursor.execute("SELECT id FROM entries WHERE url LIKE (?)", (search,))
+        ids = cursor.fetchall()
+        entry_id_list.append(ids)
 
         entries = []
-        
-        cursor.execute("SELECT id FROM entries WHERE title LIKE (?)", (search,))
-        entry_id_list = cursor.fetchall()
 
         if len(entry_id_list) >= 1:
             for item in entry_id_list:
+                for i in range(0, len(item), 1):
 
-                x = item[0]
+                    x = item[i][0]
 
-                cursor.execute("SELECT title, url, body, user_id, datetime, mimetype, image FROM entries WHERE id=?", (x,))
-                data = cursor.fetchone()
+                    cursor.execute("SELECT * FROM entries WHERE id=?", (x,))
+                    data = cursor.fetchone()
 
-                filled_entry = helpers.fill_entry_dict(data)
-                entries.append(filled_entry)
+                    filled_entry = helpers.fill_entry_dict(data)
+                    entries.append(filled_entry)
         else:
 
+            entries = helpers.get_default_entries()
             message = "No search results found - try again!"
 
-            return render_template("macha-default.html", categories=categories, message=message)
+            return render_template("macha-browse.html", bool_nosearch=bool_nosearch, entries=entries, categories=categories, message=message)
 
         conn.close()
-                            
-        return render_template("macha-browse.html", categories=categories, entries=entries)
+
+        bool_nosearch = False
+        message = ""
+                        
+        return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
     else:
 
+        entries = helpers.get_default_entries()
+
         message = "No search results found"
 
-        return render_template("macha-default.html", categories=categories, message=message)
+        return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
 
 @app.route("/delete-entry", methods=["GET", "POST"])
 def delete():
 
     categories = helpers.category_list()
+    bool_nosearch = True
+    
+    entries = helpers.get_default_entries()
 
     if request.method == "POST":
 
         if not request.form.get('urlInput'):
-            return render_template("macha-browse.html", categories=categories)
+            message = ""
+            return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
         url = request.form.get('urlInput')
 
@@ -339,7 +409,7 @@ def delete():
 
         if row == None:
             message = "Resource deleted - select category to browse"
-            return render_template("macha-default.html", categories=categories, message=message)
+            return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
         entry_id = row[0]
 
@@ -350,10 +420,10 @@ def delete():
 
         message = "Resource deleted - select category to browse"
 
-        return render_template("macha-default.html", categories=categories, message=message)
+        return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
     else:
         
         message = ""
 
-        return render_template("macha-browse.html", categories=categories)
+        return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
