@@ -95,11 +95,46 @@ def register():
     categories = helpers.category_list()
     bool_nosearch = True
 
+    code_list = ['TEST', '#5966', '#8888', '#6582', '#5880', '#2475', '#6666', '#0189', '#7056', '#4269', '#6558', '#1873', '#1671', '#0001']
+
+    conn = sqlite3.connect('library.db')
+    cursor = conn.cursor()
+
+    cursor.execute("""CREATE TABLE IF NOT EXISTS codes (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
+                            unique_code TEXT NOT NULL);""")
+    conn.commit()
+
+    test = 'TEST'
+    test = str(test)
+
+    cursor.execute("SELECT id FROM codes WHERE unique_code=?", [test])
+    row = cursor.fetchone()
+
+    # row is None for some reason even tho 'TEST' exists in the db
+
+    if row is None:
+        for item in code_list:
+            cursor.execute(f"INSERT INTO codes (unique_code) VALUES (?)", (item,))
+            conn.commit()
+
     if request.method == "POST":
 
-        if not request.form.get('createUsername') or not request.form.get('createPassword'):
+        if not request.form.get('createUsername') or not request.form.get('createPassword') or not request.form.get('uniqueCode'):
             message = "Username & password fields must not be blank"
             return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
+
+        user_code = request.form.get('uniqueCode')
+        user_code = str(user_code)
+
+        cursor.execute("SELECT id FROM codes WHERE unique_code=?", [user_code])
+        db_code = cursor.fetchone()
+
+        if db_code is None:
+            message = "Unique code is invalid - please try again"
+            return render_template('macha-register.html', bool_nosearch=bool_nosearch, message=message, categories=categories)
+        else:
+            cursor.execute("DELETE FROM codes WHERE unique_code=?", [user_code])
+            conn.commit()
 
         username = request.form.get('createUsername')
 
@@ -119,9 +154,6 @@ def register():
             else:
                 message = "Username should contain only letters or digits"
                 return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
-
-        conn = sqlite3.connect('library.db')
-        cursor = conn.cursor()
 
         cursor.execute("""CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, 
                             username TEXT NOT NULL, pwd_hash TEXT NOT NULL);""")

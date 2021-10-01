@@ -73,6 +73,16 @@ if (usernameReg != null) {
   });
 }
 
+const uniqueCode = document.getElementById('uniqueCodeBlock');
+
+if (uniqueCode != null) {
+  uniqueCode.addEventListener('input', () => {
+    if (uniqueCode.checkValidity()) {
+      uniqueCode.innerHTML = uniqueCode.validationMessage;
+    } 
+  });
+}
+
 const passwordReg1 = document.getElementById('passwordReg1');
 const passwordReg2 = document.getElementById('passwordReg2');
 
