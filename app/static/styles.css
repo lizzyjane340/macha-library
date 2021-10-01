@@ -279,11 +279,12 @@ textarea:valid {
     color: black;
     font-family:'Courier New', Courier, monospace;
     font-size: 0.8rem;
+    font-weight: bold;
     z-index: 1;
 }
 
 #side-text-format {
-    background-color: rgb(195, 235, 195);
+    background-color: whitesmoke;
     color: black;
     font-size: 1em;
     text-align: center;
@@ -292,13 +293,13 @@ textarea:valid {
 }
 
 #blockquote-right {
-    background-color: rgb(195, 235, 195);
+    background-color: whitesmoke;
     width: 55px;
     height: 55px;
 }
 
 #blockquote-left {
-    background-color: rgb(195, 235, 195);
+    background-color: whitesmoke;
     width: 55px;
     height: 55px;
 }
