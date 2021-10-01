@@ -61,7 +61,7 @@ def login():
             return render_template("macha-browse.html", bool_nosearch=bool_nosearch, message=message, entries=entries, categories=categories)
 
         else:
-            message = "Login not successful - try again!"
+            message = "Invalid username or password"
             bool_nosearch = True
 
             return render_template("macha-login.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
@@ -95,6 +95,8 @@ def register():
     categories = helpers.category_list()
     bool_nosearch = True
 
+# Access codes for user registration - prevents random log ins
+
     code_list = ['TEST', '#5966', '#8888', '#6582', '#5880', '#2475', '#6666', '#0189', '#7056', '#4269', '#6558', '#1873', '#1671', '#0001']
 
     conn = sqlite3.connect('library.db')
@@ -110,8 +112,6 @@ def register():
     cursor.execute("SELECT id FROM codes WHERE unique_code=?", [test])
     row = cursor.fetchone()
 
-    # row is None for some reason even tho 'TEST' exists in the db
-
     if row is None:
         for item in code_list:
             cursor.execute(f"INSERT INTO codes (unique_code) VALUES (?)", (item,))
@@ -120,7 +120,7 @@ def register():
     if request.method == "POST":
 
         if not request.form.get('createUsername') or not request.form.get('createPassword') or not request.form.get('uniqueCode'):
-            message = "Username & password fields must not be blank"
+            message = "All fields are required"
             return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
         user_code = request.form.get('uniqueCode')
@@ -130,7 +130,7 @@ def register():
         db_code = cursor.fetchone()
 
         if db_code is None:
-            message = "Unique code is invalid - please try again"
+            message = "Unique code is invalid"
             return render_template('macha-register.html', bool_nosearch=bool_nosearch, message=message, categories=categories)
         else:
             cursor.execute("DELETE FROM codes WHERE unique_code=?", [user_code])
@@ -163,7 +163,7 @@ def register():
         row = cursor.fetchone()
 
         if row is not None:
-            message = "Username already exists - please try again!"
+            message = "Username already exists"
             return render_template("macha-register.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
 # hashing password with werkzeug module and storing in database
@@ -177,7 +177,7 @@ def register():
             conn.commit()
             conn.close()
 
-        message = "Registration successful - please log in to browse"
+        message = "Registration successful - please log in"
         return render_template("macha-login.html", bool_nosearch=bool_nosearch, message=message, categories=categories)
 
     else:
@@ -218,7 +218,6 @@ def entry():
             message = "Character limit exceeded for description - max 300 characters"
             return render_template('macha-entry.html', bool_nosearch=bool_nosearch, message=message, categories=categories)
 
-# currently no character limits on text inputs - this is TODO
         conn = sqlite3.connect('library.db')
         cursor = conn.cursor()
 
@@ -268,7 +267,7 @@ def entry():
 
         entries = helpers.get_default_entries()
         
-        message = "Upload Successful - hooray!"
+        message = "Upload Successful"
 
         return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
@@ -299,7 +298,7 @@ def browse():
 
         if not session.get('user'):
             entries = helpers.get_default_entries()
-            message = "Please log in to browse by category"
+            message = "Please log in to browse"
             return render_template("macha-browse.html", bool_nosearch=bool_nosearch, entries=entries, categories=categories, message=message)
  
         conn = sqlite3.connect('library.db')
@@ -352,50 +351,38 @@ def search():
     if request.method == "POST":
 
         if not request.form.get('text-search'):
-            return redirect("/")
+            entries = helpers.get_default_entries()
+            message = "No search results found"
+            return render_template("macha-browse.html", bool_nosearch=bool_nosearch, message=message, entries=entries, categories=categories)
                                
         if not session.get('user'):
 
-            message = "Please log in to search the library"
+            message = "Please log in to search"
             return render_template("macha-login.html", bool_nosearch=bool_nosearch, categories=categories, message=message)
 
-# searching database using SQL like query - this functionality should be improved upon
+# searching database using SQL like query - provides basic text search functionality
+
         search = request.form.get('text-search')
         search = '%' + search + '%'
 
-        entry_id_list = []
-
-    # at the moment this turns up duplicate items - need to improve the code
-
         cursor.execute("SELECT id FROM entries WHERE title LIKE (?)", (search,))
-        ids = cursor.fetchall()
-        entry_id_list.append(ids)
-
-        cursor.execute("SELECT id FROM entries WHERE body LIKE (?)", (search,))
-        ids = cursor.fetchall()
-        entry_id_list.append(ids)
-
-        cursor.execute("SELECT id FROM entries WHERE url LIKE (?)", (search,))
-        ids = cursor.fetchall()
-        entry_id_list.append(ids)
+        id_list = cursor.fetchall()
 
         entries = []
 
-        if len(entry_id_list) >= 1:
-            for item in entry_id_list:
-                for i in range(0, len(item), 1):
+        if len(id_list) > 0:
+            for id in id_list:
 
-                    x = item[i][0]
-
-                    cursor.execute("SELECT * FROM entries WHERE id=?", (x,))
+                    cursor.execute("SELECT * FROM entries WHERE id=?", (id,))
                     data = cursor.fetchone()
 
                     filled_entry = helpers.fill_entry_dict(data)
                     entries.append(filled_entry)
-        else:
+
+        if len(id_list) == 0:
 
             entries = helpers.get_default_entries()
-            message = "No search results found - try again!"
+            message = "No search results found"
 
             return render_template("macha-browse.html", bool_nosearch=bool_nosearch, entries=entries, categories=categories, message=message)
 
@@ -429,9 +416,9 @@ def delete():
             message = ""
             return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
-        url = request.form.get('urlInput')
+# Deleting entry based on hidden urlData input in browse.html
 
-        print("this is the url data" + url)
+        url = request.form.get('urlInput')
 
         conn = sqlite3.connect('library.db')
         cursor = conn.cursor()
@@ -440,7 +427,7 @@ def delete():
         row = cursor.fetchone()
 
         if row == None:
-            message = "Resource deleted - select category to browse"
+            message = "Resource deleted"
             return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
         entry_id = row[0]
@@ -450,7 +437,7 @@ def delete():
         conn.commit()
         conn.close()
 
-        message = "Resource deleted - select category to browse"
+        message = "Resource deleted"
 
         return render_template("macha-browse.html", bool_nosearch=bool_nosearch, categories=categories, entries=entries, message=message)
 
