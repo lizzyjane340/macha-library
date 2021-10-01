@@ -16,7 +16,7 @@
       {% if loop.index == 1 %}
 <!--START carousel item ACTIVE ITEM-->
     <div class="carousel-item active" data-bs-interval="10000" id="carousel-item">
-        <div class="container-fluid col-md-12 justify-content-center align-items-center" id="carousel-content">
+        <div class="container-fluid col-md-10 justify-content-center align-items-center" id="carousel-content">
 <!--carousel entry text content--> 
       {% if session['user'] == entry['username'] %}
         <div class="row justify-content-center align-items-center">
@@ -38,7 +38,7 @@
         </div>
 <!--text content and date-->
         <div class="row justify-content-center align-items-center">
-          <div class="container col-md-12 justify-content-center align-items-center" id="carousel-body-text">
+          <div class="container col-md-10 justify-content-center align-items-center" id="carousel-body-text">
           {{ entry['body'] }}<br><br>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
             <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
@@ -67,9 +67,9 @@
         </div>
         <br>
           {% endif %}
-        <div class="row justify-content-center align-items-center">
+        <div class="row h-100 justify-content-center align-items-center">
 <!--carousel entry text content-->
-            <h4><a href="{{ entry['url'] }}" target="_blank" id="carousel-link">{{ entry['title'] }}</a><span class="badge badge-secondary" id="btn">{{ entry['username'] }}</span></h4>
+            <h4><a href="{{ entry['url'] }}" target="_blank" id="carousel-link">{{ entry['title'] }}</a><span class="badge badge-secondary" id="btn"><span id="carousel-username">{{ entry['username'] }}</span></span></h4>
         </div>
         <br>
         <div class="row h-100 justify-content-center align-items-center">  
@@ -78,7 +78,7 @@
         </div>
         <div class="row h-100 justify-content-center align-items-center">   
 <!-- text content and date-->
-          <div class="container col-md-12" id="carousel-body-text">  
+          <div class="container col-md-10" id="carousel-body-text">  
             {{ entry['body'] }}<br><br>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
               <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
@@ -118,7 +118,7 @@
 <!--START static resource display block-->
 <div class="container-fluid col-md-12 justify-content-center align-items-center" id="static-display-bg-div"> 
   <div class="row h-100 justify-content-center align-items-center">
-    <div class="container-fluid col-md-12 justify-content-center align-items-center" id="static-display-div">  
+    <div class="container-fluid col-md-10 justify-content-center align-items-center" id="static-display-div">  
     <br>
       {% if session['user'] == entry['username'] %}
       <div class="row justify-content-center align-items-center">
@@ -131,7 +131,7 @@
       <br>
       {% endif %}
       <div class="row justify-content-center align-items-center">
-        <h4><a href="{{ entry['url'] }}" target="_blank" id="carousel-link">{{ entry['title'] }}</a><span class="badge badge-secondary" id="btn">{{ entry['username'] }}</span></h4>
+        <h4><a href="{{ entry['url'] }}" target="_blank" id="carousel-link">{{ entry['title'] }}</a><span class="badge badge-secondary" id="btn"><span id="carousel-username">{{ entry['username'] }}</span></span></h4>
       </div>
 <!--image div for entry-->
       <br>
@@ -140,7 +140,7 @@
       </div>
 <!--text content and date-->
       <div class="row justify-content-center align-items-center">
-        <div class="container col-md-12 justify-content-center align-items-center" id="carousel-body-text">
+        <div class="container col-md-10 justify-content-center align-items-center" id="carousel-body-text">
         {{ entry['body'] }}<br><br>
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
           <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>

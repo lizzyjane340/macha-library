@@ -171,27 +171,27 @@ input { text-align: center }
 /* for laptop 13" screen and larger */
 @media only screen and (min-width: 900px) {
     #back-background-block {
-      height: 92vh;
+      height: 86vh;
     }
 
     #carouselExampleFade {
-        height: 92vh;
+        height: 86vh;
     }
 
     #carousel-inner {
-        height: 92vh;
+        height: 86vh;
     }
 
     #carousel-button {
-        height: 92vh;
+        height: 86vh;
     }
 
     #form {
-        height: 92vh;
+        height: 86vh;
     }
 
     #resource-display-div {
-        height: 92vh;
+        height: 86vh;
     }
 }
 
@@ -199,7 +199,7 @@ input { text-align: center }
 
 /* carousel height */
 carousel { height: calc(100vh - 56px);}
-.carousel-inner,.carousel-item { height: 100%;}
+.carousel-inner,.carousel-item { height: 100%; width: 100%;}
 
 /* clearfix for potential div overflow */
 .clearfix::after {
