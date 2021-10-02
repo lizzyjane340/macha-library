@@ -424,11 +424,12 @@ textarea:valid {
     color: black;
 }
 
-#message-text {
-    font-size: 0.9em;
+.message-text {
+    font-family: 'Lucida Sans', Verdana, sans-serif !important;
+    font-size: 1em;
     font-weight: bold;
     text-align: center;
-    color: black;
+    color:red !important;
     justify-self: center;
     align-self: center;
     justify-content: center;
