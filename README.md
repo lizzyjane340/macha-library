@@ -1,18 +1,22 @@
 # Macha Library
 
-# [Video Demo](https://www.youtube.com/watch?v=puB21mO4Iws)
+### [Video Demo](https://www.youtube.com/watch?v=puB21mO4Iws) beta version
 
 ## Description
 
 Macha Library is a web application for contributing, browsing and learning from Computer Science and Programming related
 online resources. The app was created for members of the Macha Discord server, and includes a user registration & login 
-feature for existing members.
-
-It runs on desktop and mobile, & features a carousel data slide to display the available resources. To view Macha Library 
-resources, or to contribute, login is required. Users then have the ability to add or delete resources. 
+feature for existing members. To view Macha Library resources, or to contribute, login is required. Users then have the ability 
+to add or delete resources. 
 
 Resources, applicable categories for that resource, and associated data are also stored in a **SQLite3** database. Uploaded 
 image files are stored as **blob** data within the database and are not uploaded to the server's file directory.
+
+Visually, the web application is responsive to smaller viewport sizes. The front end was developed using **Bootstrap 5 CDN**, 
+custom **CSS** and **Javascript**, **HTML5** and the **Jinja2** template engine, and a darkmode feature is enabled via the
+**darkmode.js CDN**.
+
+The back end is implemented entirely in **Python3** using the **Flask** framework.
 
 Application features include:
 
@@ -25,6 +29,8 @@ Application features include:
 - Resource deletion 
 - Text search
 - Category search
+- Darkmode.js widget
+- Responsive design
 
 ## Installation
 
@@ -51,21 +57,21 @@ a CS related resource to the library itself, please go to the hosted application
 
 ## Screenshots
 
-![16143F02-7B05-4172-8125-BBDCC8C737D0_1_201_a](https://user-images.githubusercontent.com/75592024/134354277-4b0f47c9-adf0-484e-a10b-2b71fc2cd25d.jpeg)
+![5B9B4E2A-55DA-4851-A5E5-51237C4EDC34_1_105_c](https://user-images.githubusercontent.com/75592024/135724564-24b916b5-f5e2-4dd1-b195-adefbd0486f6.jpeg)
 
+![9B1E37CA-92F9-4C5D-B13D-05A19437B3C7_1_201_a](https://user-images.githubusercontent.com/75592024/135724387-93ca9cca-ae6d-4ead-bf64-75d5d9b87f8c.jpeg)
 
-![4E43F24B-808A-4D35-9946-404BEC723C21_1_201_a](https://user-images.githubusercontent.com/75592024/134354314-8e2e8e6a-e2ac-48dc-b37c-16c430b95c08.jpeg)
+<img width="477" alt="C6D112E1-0E0F-484F-9E6F-86AF2C96F165" src="https://user-images.githubusercontent.com/75592024/135724396-0bf02bb4-a10d-43ae-be3d-7726f8926190.png">
 
+![459874C4-D1FD-4DDB-8768-78AABCF64256_1_105_c](https://user-images.githubusercontent.com/75592024/135724527-982c9e12-153f-4e32-a0e9-39ba19231165.jpeg)
 
-![47A5B761-B6F3-4C0A-8677-8E110F9CB33C_1_105_c](https://user-images.githubusercontent.com/75592024/134354637-e08397f7-4a31-4ac7-9cca-53eee756c4b7.jpeg)
+<img width="1398" alt="636E04C2-068A-438C-BB6F-64C3E6F5D3E6" src="https://user-images.githubusercontent.com/75592024/135724502-f86bbfdb-7801-4f34-b405-de4695548cc2.png">
 
+<img width="1406" alt="659F947C-EC60-492D-909E-AE573E117DE3" src="https://user-images.githubusercontent.com/75592024/135726064-47a535aa-f114-458b-8e05-36f6d5cd766f.png">
 
-![9D470EF9-0F52-4651-ADCE-B53A28D154FC_1_105_c](https://user-images.githubusercontent.com/75592024/134353978-56dc6f5b-3284-4c33-8a22-df0cd1757053.jpeg)
+![C5C8BD8C-57E4-47AF-9F4B-4BCD9C6FBF0E_1_201_a](https://user-images.githubusercontent.com/75592024/135724434-c6c5dad8-0117-4bc3-935e-0f6fb6800205.jpeg)
 
-
-![8A7F448F-A5CD-4EAB-9EEF-6A6B7FC4BEE2_1_105_c](https://user-images.githubusercontent.com/75592024/134355396-34d419a5-2149-4f7a-9290-99654de8b6e7.jpeg)
-
-
+<img width="912" alt="84092911-FE01-4F31-BD92-3500828DB980" src="https://user-images.githubusercontent.com/75592024/135725526-578df835-3532-45fa-bc07-d900615f8a3c.png">
 
 ## Contact
 
