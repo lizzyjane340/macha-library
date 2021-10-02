@@ -51,7 +51,7 @@ a CS related resource to the library itself, please go to the hosted application
 
 ## Screenshots
 
-<img width="497" alt="2B7BBA3B-D1DC-4C36-ACB3-B1ABD09D3DAE" src="https://user-images.githubusercontent.com/75592024/135724374-f5ec5f6b-d1bd-47da-8927-d75d34b0c322.png">
+![5B9B4E2A-55DA-4851-A5E5-51237C4EDC34_1_105_c](https://user-images.githubusercontent.com/75592024/135724564-24b916b5-f5e2-4dd1-b195-adefbd0486f6.jpeg)
 
 ![9B1E37CA-92F9-4C5D-B13D-05A19437B3C7_1_201_a](https://user-images.githubusercontent.com/75592024/135724387-93ca9cca-ae6d-4ead-bf64-75d5d9b87f8c.jpeg)
 
