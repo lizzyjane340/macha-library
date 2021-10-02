@@ -1,6 +1,6 @@
 # Macha Library
 
-# [Video Demo](https://www.youtube.com/watch?v=puB21mO4Iws)
+# [Video Demo](https://www.youtube.com/watch?v=puB21mO4Iws) beta version
 
 ## Description
 
@@ -51,21 +51,15 @@ a CS related resource to the library itself, please go to the hosted application
 
 ## Screenshots
 
-![16143F02-7B05-4172-8125-BBDCC8C737D0_1_201_a](https://user-images.githubusercontent.com/75592024/134354277-4b0f47c9-adf0-484e-a10b-2b71fc2cd25d.jpeg)
+![9B1E37CA-92F9-4C5D-B13D-05A19437B3C7_1_105_c](https://user-images.githubusercontent.com/75592024/135724074-d5ea19a1-325d-4eaa-bb24-612ce64e1177.jpeg)
 
+![346EBE36-7D26-43B5-8EEF-CAEAD1629065_1_105_c](https://user-images.githubusercontent.com/75592024/135724103-9d32dfbc-0d68-4889-bf31-9cc347bfe3b8.jpeg)
 
-![4E43F24B-808A-4D35-9946-404BEC723C21_1_201_a](https://user-images.githubusercontent.com/75592024/134354314-8e2e8e6a-e2ac-48dc-b37c-16c430b95c08.jpeg)
+![46E66356-CF4A-45B8-A88A-8FC420342759_1_105_c](https://user-images.githubusercontent.com/75592024/135724129-abea4072-f04d-49c3-8271-ad0521db28a6.jpeg)
 
+![C374620E-A281-487C-B587-0E6B0C1CFD8B_1_105_c](https://user-images.githubusercontent.com/75592024/135724206-2b524d26-7883-4127-b658-30639af28ad4.jpeg)
 
-![47A5B761-B6F3-4C0A-8677-8E110F9CB33C_1_105_c](https://user-images.githubusercontent.com/75592024/134354637-e08397f7-4a31-4ac7-9cca-53eee756c4b7.jpeg)
-
-
-![9D470EF9-0F52-4651-ADCE-B53A28D154FC_1_105_c](https://user-images.githubusercontent.com/75592024/134353978-56dc6f5b-3284-4c33-8a22-df0cd1757053.jpeg)
-
-
-![8A7F448F-A5CD-4EAB-9EEF-6A6B7FC4BEE2_1_105_c](https://user-images.githubusercontent.com/75592024/134355396-34d419a5-2149-4f7a-9290-99654de8b6e7.jpeg)
-
-
+![8747A241-402F-4FA6-B20D-9F905C9A8B00_1_105_c](https://user-images.githubusercontent.com/75592024/135724152-57bb6735-ed65-4b40-9090-5d51d30e26cb.jpeg)
 
 ## Contact
 
