@@ -67,7 +67,7 @@ a CS related resource to the library itself, please go to the hosted application
 
 <img width="1398" alt="636E04C2-068A-438C-BB6F-64C3E6F5D3E6" src="https://user-images.githubusercontent.com/75592024/135724502-f86bbfdb-7801-4f34-b405-de4695548cc2.png">
 
-![9AFBA9FD-4511-4918-BD95-1F47D233053E_1_201_a](https://user-images.githubusercontent.com/75592024/135724409-246d5229-4ab0-4afe-bc3e-fc47f651c264.jpeg)
+<img width="1406" alt="659F947C-EC60-492D-909E-AE573E117DE3" src="https://user-images.githubusercontent.com/75592024/135726064-47a535aa-f114-458b-8e05-36f6d5cd766f.png">
 
 ![C5C8BD8C-57E4-47AF-9F4B-4BCD9C6FBF0E_1_201_a](https://user-images.githubusercontent.com/75592024/135724434-c6c5dad8-0117-4bc3-935e-0f6fb6800205.jpeg)
 
