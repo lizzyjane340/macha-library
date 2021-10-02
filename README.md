@@ -65,13 +65,13 @@ a CS related resource to the library itself, please go to the hosted application
 
 ![459874C4-D1FD-4DDB-8768-78AABCF64256_1_105_c](https://user-images.githubusercontent.com/75592024/135724527-982c9e12-153f-4e32-a0e9-39ba19231165.jpeg)
 
-<img width="1398" alt="636E04C2-068A-438C-BB6F-64C3E6F5D3E6" src="https://user-images.githubusercontent.com/75592024/135724502-f86bbfdb-7801-4f34-b405-de4695548cc2.png">
+<img width="754" alt="636E04C2-068A-438C-BB6F-64C3E6F5D3E6" src="https://user-images.githubusercontent.com/75592024/135724502-f86bbfdb-7801-4f34-b405-de4695548cc2.png">
 
-<img width="1406" alt="659F947C-EC60-492D-909E-AE573E117DE3" src="https://user-images.githubusercontent.com/75592024/135726064-47a535aa-f114-458b-8e05-36f6d5cd766f.png">
+<img width="703" alt="659F947C-EC60-492D-909E-AE573E117DE3" src="https://user-images.githubusercontent.com/75592024/135726064-47a535aa-f114-458b-8e05-36f6d5cd766f.png">
 
 ![C5C8BD8C-57E4-47AF-9F4B-4BCD9C6FBF0E_1_201_a](https://user-images.githubusercontent.com/75592024/135724434-c6c5dad8-0117-4bc3-935e-0f6fb6800205.jpeg)
 
-<img width="912" alt="84092911-FE01-4F31-BD92-3500828DB980" src="https://user-images.githubusercontent.com/75592024/135725526-578df835-3532-45fa-bc07-d900615f8a3c.png">
+<img width="406" alt="84092911-FE01-4F31-BD92-3500828DB980" src="https://user-images.githubusercontent.com/75592024/135725526-578df835-3532-45fa-bc07-d900615f8a3c.png">
 
 ## Contact
 
