@@ -61,7 +61,7 @@ a CS related resource to the library itself, please go to the hosted application
 
 <img width="812" src="https://user-images.githubusercontent.com/75592024/135724387-93ca9cca-ae6d-4ead-bf64-75d5d9b87f8c.jpeg">
 
-<img width="477" alt="C6D112E1-0E0F-484F-9E6F-86AF2C96F165" src="https://user-images.githubusercontent.com/75592024/135724396-0bf02bb4-a10d-43ae-be3d-7726f8926190.png">
+<img width="406" alt="C6D112E1-0E0F-484F-9E6F-86AF2C96F165" src="https://user-images.githubusercontent.com/75592024/135724396-0bf02bb4-a10d-43ae-be3d-7726f8926190.png">
 
 <img width="812" src="https://user-images.githubusercontent.com/75592024/135724527-982c9e12-153f-4e32-a0e9-39ba19231165.jpeg">
 
@@ -69,7 +69,7 @@ a CS related resource to the library itself, please go to the hosted application
 
 <img width="812" alt="659F947C-EC60-492D-909E-AE573E117DE3" src="https://user-images.githubusercontent.com/75592024/135726064-47a535aa-f114-458b-8e05-36f6d5cd766f.png">
 
-<img width="306" src="https://user-images.githubusercontent.com/75592024/135724434-c6c5dad8-0117-4bc3-935e-0f6fb6800205.jpeg">
+<img width="406" src="https://user-images.githubusercontent.com/75592024/135724434-c6c5dad8-0117-4bc3-935e-0f6fb6800205.jpeg">
 
 <img width="812" alt="84092911-FE01-4F31-BD92-3500828DB980" src="https://user-images.githubusercontent.com/75592024/135725526-578df835-3532-45fa-bc07-d900615f8a3c.png">
 
