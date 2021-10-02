@@ -6,13 +6,17 @@
 
 Macha Library is a web application for contributing, browsing and learning from Computer Science and Programming related
 online resources. The app was created for members of the Macha Discord server, and includes a user registration & login 
-feature for existing members.
-
-It runs on desktop and mobile, & features a carousel data slide to display the available resources. To view Macha Library 
-resources, or to contribute, login is required. Users then have the ability to add or delete resources. 
+feature for existing members. To view Macha Library resources, or to contribute, login is required. Users then have the ability 
+to add or delete resources. 
 
 Resources, applicable categories for that resource, and associated data are also stored in a **SQLite3** database. Uploaded 
 image files are stored as **blob** data within the database and are not uploaded to the server's file directory.
+
+Visually, the web application is responsive to smaller viewport sizes. The front end was developed using **Bootstrap 5 CDN**, 
+custom **CSS** and **Javascript**, **HTML5** and the **Jinja2** template engine, and a darkmode feature is enabled via the
+**darkmode.js CDN**.
+
+The back end is implemented entirely in **Python3** using the **Flask** framework.
 
 Application features include:
 
@@ -25,6 +29,8 @@ Application features include:
 - Resource deletion 
 - Text search
 - Category search
+- Darkmode.js widget
+- Responsive design
 
 ## Installation
 
