@@ -1,27 +1,23 @@
-// script for darkmode.js widget begin
-    function addDarkmodeWidget() {
-          new Darkmode().showWidget();
-        }
-
-    window.addEventListener('load', addDarkmodeWidget); 
-  
-    const options = {
-    bottom: '32px', 
-    right: '32px', 
-    left: 'unset', 
-    time: '0.7s', 
-    mixColor: '#fff', 
-    backgroundColor: '#fff', 
-    buttonColorDark: '#000',  
-    buttonColorLight: '#FFF', 
-    saveInCookies: true, 
-    label: '🌓', 
-    autoMatchOsTheme: false
-    } 
- 
+// darkmode-js widget
+  function addDarkmodeWidget() {
     const darkmode = new Darkmode(options);
-        
     darkmode.showWidget();
+  }
+  window.addEventListener('load', addDarkmodeWidget);
+
+const options = {
+  bottom: '64px', // default: '32px'
+  right: 'unset', // default: '32px'
+  left: '32px', // default: 'unset'
+  time: '0.3s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: true, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
 
 // date widget for navbar 
 var months = ['January','February','March','April','May','June','July',

@@ -48,7 +48,6 @@
           <br>
       </div>
     </div>
-
   </div>
 </div> 
       {% endif %}
@@ -56,7 +55,7 @@
   {% if loop.index > 1 %}
 <!--START carousel item NEXT ITEM-->
   <div class="carousel-item" data-bs-slide="10000" id="carousel-item">
-      <div class="container-fluid col-md-12 justify-content-center align-items-center" id="carousel-content">
+      <div class="container-fluid col-md-10 justify-content-center align-items-center" id="carousel-content">
         {% if session['user'] == entry['username'] %}
         <div class="row justify-content-center align-content-center">
           <form class="form-inline" action="/delete-entry" method="POST"> 

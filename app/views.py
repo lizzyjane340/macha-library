@@ -298,7 +298,7 @@ def browse():
 
         if not session.get('user'):
             entries = helpers.get_default_entries()
-            message = "Please log in to browse"
+            message = "Please log in"
             return render_template("macha-browse.html", bool_nosearch=bool_nosearch, entries=entries, categories=categories, message=message)
  
         conn = sqlite3.connect('library.db')
