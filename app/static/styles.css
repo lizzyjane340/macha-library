@@ -208,6 +208,7 @@ textarea:valid {
     background-size: cover;
     font-size: 0.9em;
     width: 100%;
+    padding-bottom: 0.4em;
 }
 
 #main-content-block {
@@ -229,35 +230,12 @@ textarea:valid {
 }
 
 #side-text-format {
-    background-color: whitesmoke;
+    background-color: antiquewhite;
     color: black;
-    font-size: 1em;
+    font-size: 0.9em;
     text-align: center;
     border: solid black 0.08em;
     padding: 0.3rem;
-}
-
-#blockquote-right {
-    background-color: whitesmoke;
-    border: solid black 0.03em;
-    padding-bottom: 0.5em;
-    width: 60px;
-    height: 65px;
-}
-
-#blockquote-left {
-    background-color: whitesmoke;
-    border: solid black 0.03em;
-    padding-bottom: 0.5em;
-    width: 60px;
-    height: 65px;
-}
-
-/* categories dropdown menu */
-#select-dropdown-menu {
-    font-size: 0.6rem;
-    padding-bottom: 0.5rem;
-    padding-top: 0.5rem;
 }
 
 /* username and date text*/
