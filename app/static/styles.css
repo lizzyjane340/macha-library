@@ -16,7 +16,7 @@
 }
 
 /* responsive font size */
-html { font-size: calc(0.7em + 0.6vw) }
+html { font-size: calc(0.7em + 0.7vw) }
 button { font-size: inherit }
 input { font-size: inherit }
 
