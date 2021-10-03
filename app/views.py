@@ -53,7 +53,7 @@ def login():
 
             conn.close()
 
-            message = "You are now logged in"
+            message = ""
 
             entries = helpers.get_default_entries()
             categories = helpers.category_list()
