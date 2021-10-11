@@ -373,6 +373,11 @@ textarea:valid {
     justify-content: center;
 }
 
+#message {
+    font-size: small;
+    text-align: center;
+}
+
 /* text formatting and sizes */
 #text-field {
     width: 25rem;
