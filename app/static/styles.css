@@ -173,6 +173,7 @@ input {
     background-color: whitesmoke;
     border: ridge 3px gray;
     padding: 2em;
+    padding-bottom: 1em;
     font-weight: normal;
     text-align: center;
 }
@@ -229,7 +230,6 @@ input {
 
 #entry-file {
     font-family: 'Courier New', Courier, monospace; 
-    font-weight: bold !important; 
 }
 
 /* footer */
