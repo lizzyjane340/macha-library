@@ -96,44 +96,43 @@ input {
 }
 
 #search-box {
-    border: solid black 0.08em;
+    border: ridge 1px gray;
+}
+
+/* 2nd nav bar */
+#second-nav {
+    background-image: url('/static/Electronic-circuit-board-2560x1600-wallpaper.jpg');   
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 0.08em gray solid;
+    border-top: 0.08em gray solid;
+    font-size: 0.9em;
+    width: 100%;
+    padding-bottom: 0.8em;
 }
 
 #select-dropdown-menu {
     font-family: 'Courier New', Courier, monospace;
 }
 
-/* background block contains all page content */
-#back-background-block {
-    background-color: whitesmoke;
-    width: 100%;
+#option-select {
+    border: ridge 1px gray;
 }
 
-/* functions as 2nd nav bar */
-#background-block {
-    background-image: url('/static/macha-library-wallpaper.jpeg');   
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    border-bottom: 0.08em black solid;
-    background-size: cover;
-    font-size: 0.9em;
-    width: 100%;
-    padding-bottom: 0.8em;
-}
-
-#main-content-block {
-    background-color: whitesmoke;
-    width: 100%;
-}
-
-/* username and date text*/
 #dateBlock {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2em !important;
+    font-size: 1em !important;
     font-weight: 600;
-    color: white;
+    color: black;
     padding: 0.2rem;
     margin: 0.2em;
+}
+
+#username-date {
+    color: black;
+    font-size: 1.5em;
 }
 
 #resource-body-text {
@@ -146,7 +145,7 @@ input {
 #resource-display-div {
     background-color: whitesmoke !important;
     text-align: center;
-    border: ridge 3px gray;
+    border: ridge 2px gray;
     border-radius: 10px;
     font-size: 1em;
     margin-bottom: 1em;
@@ -157,20 +156,24 @@ input {
 }
 
 #img-resource {
-    margin-bottom: 1em;
+    border: ridge 2px gray;
+    margin-top: 2em;
+    margin: 1em;
+    width: 60%;
 }
 
 /* image to fill base of md size screens */
 #display-bg-div {
-    background-color: rgb(195, 235, 195);
+    background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
     padding: 1em;
+    padding-bottom: 3em;
     overflow: auto;
 }
 
 #mobile-bg-div {
     background-color: rgb(195, 235, 195);
     color:rgb(195, 235, 195);
-    height: 8vh;
+    height: 10vh;
     width: 100%;
     overflow: auto;
 }
@@ -178,7 +181,7 @@ input {
 #mobile-bg-div-2 {
     background-color: rgb(195, 235, 195);
     color:rgb(195, 235, 195);
-    height: 40vh;
+    height: 21vh;
     width: 100%;
     overflow: auto;
 }
@@ -215,7 +218,6 @@ input {
     background-color: whitesmoke;
     border: ridge 3px gray;
     padding: 2em;
-    padding-bottom: 1em;
     font-weight: normal;
     text-align: center;
 }
@@ -233,9 +235,6 @@ input {
     text-align: center;
 }
 
-#text-light-edit {
-    color: white !important;
-}
 
 #form-text-other {
     font-size: 0.8em;
@@ -284,8 +283,14 @@ input {
 
 /* footer */
 #footer {
-    background-image: url('/static/macha-library-wallpaper.jpeg');
-    color: white;
+    background-image: url('/static/Electronic-circuit-board-2560x1600-wallpaper.jpg');
+    background-position: center;
+    border-top: ridge 1px gray;
+    color: black;
     padding: 0;
     z-index: 1;
+}
+
+#link-footer {
+    color: black !important;
 }

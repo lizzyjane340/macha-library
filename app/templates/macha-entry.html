@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block main %}
+<!--START mobile space filler block-->
+<div class="d-block d-md-none">
+  <div class="container-fluid col-md-12" id="mobile-bg-div">
+                    >>>>>
+  </div>
+</div>
+<!--END mobile space filler block-->
 <!--START form for main content block-->
 <form action="/macha-entry" method="POST" enctype="multipart/form-data">
   <div class="container-fluid col-md-8 justify-content-center text-center" aria-label="entry-form" id="form">
@@ -20,7 +27,7 @@
 <!--title input-->
     <div class="row justify-content-center align-items-center">
       <div class="form-group col-md-10 text-center" aria-label="text field for entry title">
-        <h4>Contribute</h4>
+        <h2>Contribute</h2>
         <input autocomplete="off" autofocus class="form-control" name="entry-title" placeholder="Title" type="text" aria-describedby="titleBlock" id="entryTitle" required minlength="3" maxlength="100"> 
         <input autocomplete="off" autofocus class="form-control" name="entry-link" placeholder="URL" type="text" aria-describedby="linkBlock" id="entryLink" required minlength="10" maxlength="300"> 
         <textarea class="form-control" name="entry-body" placeholder="Description" rows="2" id="entryDesc" required minlength="10" maxlength="300"></textarea>  
@@ -57,4 +64,11 @@
 </div>
 </form>
 <!--END form for main content block-->
+<!--START mobile space filler block-->
+<div class="d-block d-md-none">
+  <div class="container-fluid col-md-12" id="mobile-bg-div-2">
+                    >>>>>
+  </div>
+</div>
+<!--END mobile space filler block-->
 {% endblock %}

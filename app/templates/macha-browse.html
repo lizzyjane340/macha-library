@@ -10,7 +10,7 @@
 <!--message div start-->
 {% if message %}
 <div class="row justify-content-center align-items-center">
-  <div class="container-fluid col-md-12 justify-content-center align-items-center" id="display-bg-div"> 
+  <div class="d-block d-md-none container-fluid col-md-12 justify-content-center align-items-center" id="display-bg-div"> 
   <div class="container-fluid col-md-6 alert alert-danger alert-dismissible justify-self-center text-center" id="message">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
     <b>
@@ -25,7 +25,7 @@
 <div class="cards-grid justify-content-between align-items-between">
   {% for entry in entries %}
   <div class="card" id="resource-display-div">  
-    <img class="card-img-top img-fluid" src="data:{{ entry['mimetype'] }};base64,{{ entry['image'] }}" id="img-resource" height="100" width="100" alt="resource image"><br>
+    <img class="card-img-top img-fluid align-self-center" src="data:{{ entry['mimetype'] }};base64,{{ entry['image'] }}" id="img-resource" alt="resource image"><br>
 <!--DELETE button begin-->
       {% if session['user'] == entry['username'] %}
       <div class="row justify-content-center align-items-center" id=btn-delete-div">

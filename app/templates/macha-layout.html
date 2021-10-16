@@ -56,26 +56,27 @@
       </ul>
 <!--START navbar search form--> 
         <form action="/macha-search" method="POST" class="d-flex ms-auto order-5">
-          <input class="form-control mr-sm-2" type="search" name="text-search" placeholder="Find macha wisdom" aria-label="Search">
+          <input class="form-control mr-sm-2" type="search" name="text-search" placeholder="Find macha wisdom" aria-label="Search box" id="search-box">
           <button class="btn btn-secondary my-2 my-sm-0" name="submit" type="submit" value="submit" id="btn">Search</button>
         </form>   
 <!-- END navbar search form-->
       </div>
 </nav>
 <!--END site fixed navbar-->
-<div class="container-fluid col-md-12 justify-content-center align-content-center" id="background-block"> 
+<div class="container-fluid col-md-12 justify-content-center align-content-center" id="second-nav"> 
   <div class="row h-100 col-md-12 justify-content-center align-items-center" id="select-row">
 <!--username and date display-->
-      <span id="dateBlock"><span id="spanDate"/>
+      <span id="dateBlock"><span id="spanDate"></span>
+      <span id="username-date">
       {% if 'user' in session %}
       {{ session['user'] }}
-      {% endif %} </span>
+      {% endif %}</span></span>
     </div>
   <div class="row h-100 justify-content-center align-items-center">
 <!--categories dropdown menu--> 
     <form class="form-inline" action="/" method="POST">
       <div class="input-group" id="select-dropdown-menu">
-        <select class="custom-select" name="category">
+        <select class="custom-select" name="category" id="option-select">
           {% for cat in categories %}
           <option value="{{ cat }}">{{ cat }}</option>
           {% endfor %}
@@ -85,35 +86,17 @@
     </form>
   </div>
 </div>
-
-<!--START mobile space filler block-->
-<div class="d-block d-md-none">
-  <div class="container-fluid col-md-12" id="mobile-bg-div">
-                    >>>>>
-  </div>
-</div>
-<!--END mobile space filler block-->
-
 <!--START central layout block-->
   <div class="container-fluid col-md-12 justify-content-center align-items-center" id="display-bg-div">
     {% block main %}{% endblock %}
   </div>
 <!--END central layout block-->
 </div>
-
-<!--START mobile space filler block-->
-<div class="d-block d-md-none">
-  <div class="container-fluid col-md-12" id="mobile-bg-div-2">
-                    >>>>>
-  </div>
-</div>
-<!--END mobile space filler block-->
-
 <!--START Footer -->
-  <footer class="footer col-md-12 fixed-bottom" id="footer">
+  <footer class="footer col-md-12" id="footer">
     <div class="text-center p-1">
       made by <b>Lizzyjane340</b> with
-      <a href="https://mdbootstrap.com/" id="text-light-edit">MDBootstrap.com</a>
+      <a href="https://mdbootstrap.com/" id="link-footer">MDBootstrap.com</a>
     </div>
   </footer>
 <!--END Footer --> 

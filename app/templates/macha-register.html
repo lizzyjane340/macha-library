@@ -5,17 +5,22 @@
 {% endblock %}
 
 {% block main %}
+<!--START mobile space filler block-->
+<div class="d-block d-md-none">
+  <div class="container-fluid col-md-12" id="mobile-bg-div">
+                    >>>>>
+  </div>
+</div>
+<!--END mobile space filler block-->
 <!--START register form for main block-->
 <form action="/macha-register" method="POST">
   <div class="container-fluid col-md-8 justify-content-center align-content-center" aria-label="login form" id="form">
 <!--create username text input-->   
     <div class="row justify-content-center align-items-center">
-      <div class="form-group col-md-8 text-center" aria-label="user registration form">
-        <h4>Register</h4>
-        <br>
+      <div class="form-group col-md-6 text-center" aria-label="user registration form">
+        <h2>Register</h2>
           <input autocomplete="off" autofocus class="form-control" name="createUsername" placeholder="Create Username" type="text" aria-describedby="usernameBlock" id="usernameReg" required minlength="3" maxlength="15">
           <input autocomplete="off" autofocus class="form-control" name="uniqueCode" placeholder="Enter Unique Code" type="text" aria-describedby="uniquecodeBlock" id="uniqueCodeBlock" required minlength="3" maxlength="6">
-        <br>
 <!--create password/confirm password text input-->
           <input autocomplete="off" autofocus class="form-control" name="createPassword" placeholder="Create Password" type="password" aria-describedby="passwordBlock" id="passwordReg1" required minlength="8" maxlength="30">
           <input autocomplete="off" autofocus class="form-control" name="confirmPassword" placeholder="Re-Type Password" type="password" aria-describedby="passwordBlock" id="passwordReg2" required minlength="8" maxlength="30">   
@@ -44,4 +49,11 @@
 </form>
 <br><br>
 <!-- END register form for main block-->
+<!--START mobile space filler block-->
+<div class="d-block d-md-none">
+  <div class="container-fluid col-md-12" id="mobile-bg-div-2">
+                    >>>>>
+  </div>
+</div>
+<!--END mobile space filler block-->
 {% endblock %}
