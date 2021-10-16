@@ -145,6 +145,22 @@ input {
     overflow: auto;
 }
 
+#mobile-bg-div {
+    background-color: rgb(195, 235, 195);
+    color:rgb(195, 235, 195);
+    height: 8vh;
+    width: 100%;
+    overflow: auto;
+}
+
+#mobile-bg-div-2 {
+    background-color: rgb(195, 235, 195);
+    color:rgb(195, 235, 195);
+    height: 40vh;
+    width: 100%;
+    overflow: auto;
+}
+
 #title {
     color: green;
 }
@@ -230,6 +246,10 @@ input {
 
 #entry-file {
     font-family: 'Courier New', Courier, monospace; 
+}
+
+#entryDesc {
+    height: 3em;
 }
 
 /* footer */
