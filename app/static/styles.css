@@ -166,16 +166,16 @@ input {
 }
 
 #mobile-bg-div {
-    background-color: rgb(195, 235, 195);
-    color:rgb(195, 235, 195);
+    background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
+    color: rgb(187, 207, 187);
     height: 10vh;
     width: 100%;
     overflow: auto;
 }
 
 #mobile-bg-div-2 {
-    background-color: rgb(195, 235, 195);
-    color:rgb(195, 235, 195);
+    background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
+    color: rgb(187, 207, 187);
     height: 21vh;
     width: 100%;
     overflow: auto;
