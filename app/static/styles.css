@@ -19,18 +19,21 @@ h4 {
     text-align: center; 
     font-family: 'Courier New', Courier, monospace; 
     font-weight: bold; 
+    color: black;
 }
 
 h2 {
     text-align: center; 
     font-family: 'Courier New', Courier, monospace; 
     font-weight: bold; 
+    color: black;
 }
 
 h6 { 
     text-align: center;
     font-family: 'Courier New', Courier, monospace; 
     font-weight: bold;  
+    color: black;
 }
 
 body { font-size: 0.8em }
@@ -139,6 +142,7 @@ input {
 
 #resource-display-div {
     background-color: whitesmoke !important;
+    color: black;
     text-align: center;
     border: ridge 2px gray;
     border-radius: 10px;
@@ -166,8 +170,8 @@ input {
 }
 
 #mobile-bg-div {
-    background-color: rgb(111, 216, 111);
-    color: black;
+    background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
+    color: rgb(187, 207, 187);
     height: 10vh;
     width: 100%;
     overflow: auto;
@@ -176,7 +180,7 @@ input {
 }
 
 #mobile-bg-div-2 {
-    background-color: rgb(187, 207, 187);
+    background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
     color: black;
     height: 21vh;
     width: 100%;
@@ -216,6 +220,7 @@ input {
 #form {
     z-index: 1;
     background-color: whitesmoke;
+    color: black !important;
     border: ridge 3px gray;
     padding: 2em;
     font-weight: normal;
@@ -256,6 +261,7 @@ input {
     font-weight: normal !important;
     font-size: 0.7em;
     margin: 0.5rem;
+    color: black !important;
 }
 
 #uploadLabel {
