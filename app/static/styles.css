@@ -5,14 +5,9 @@
 }
 
 /* darkmode image colour override control */
-.darkmode--activated .img-thumbnail #img-thumbnail {
+.darkmode--activated #img-resource {
     isolation: isolate;
     mix-blend-mode: difference;
-}
-
-.img-thumbnail {
-    height: auto;
-    width: auto;
 }
 
 /* responsive font size */
