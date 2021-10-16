@@ -166,19 +166,24 @@ input {
 }
 
 #mobile-bg-div {
-    background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
-    color: rgb(187, 207, 187);
+    background-color: rgb(111, 216, 111);
+    color: black;
     height: 10vh;
     width: 100%;
     overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
 }
 
 #mobile-bg-div-2 {
-    background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
-    color: rgb(187, 207, 187);
+    background-color: rgb(187, 207, 187);
+    color: black;
     height: 21vh;
     width: 100%;
     overflow: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9rem;
+    z-index: 1.5;
 }
 
 #title {
