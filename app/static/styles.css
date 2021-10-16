@@ -27,7 +27,7 @@ h4 {
 }
 
 h6 { 
-    text-align:center;
+    text-align: center;
     font-family: 'Courier New', Courier, monospace; 
     font-weight: bold;  
 }
@@ -35,128 +35,11 @@ h6 {
 body { font-size: 0.8em }
 input { text-align: center }
 
-/* for ALL mobiles - portrait */
-@media only screen and (min-device-width: 350px) and (max-device-height: 930px) {
-    #back-background-block {
-        height: 70vh;
-    }
-
-    #carouselExampleFade {
-        height: 70vh;
-    }
-
-    #carousel-inner {
-        height: 70vh;
-    }
-
-    #carousel-button {
-        height: 70vh;
-    }
-
-    #form {
-        height: 70vh;
-    }
-
-    #resource-display-div {
-        height: 70vh;
-    }
-}
-/* for ALL phones landscape */
-@media only screen and (min-device-width: 660px) and (max-device-width: 930px) and (max-device-height: 430px) {
-    #back-background-block {
-      height: 120vh;
-    }
-
-    #carouselExampleFade {
-        height: 120vh;
-    }
-
-    #carousel-inner {
-        height: 120vh;
-    }
-
-    #carousel-button {
-        height: 120vh;
-    }
-
-    #form {
-        height: 120vh;
-    }
-
-    #resource-display-div {
-        height: 120vh;
-    }
-}
-
-/* for tablets PORTRAIT */
-@media only screen and (min-device-width: 1000px) and (max-device-height: 1500px) {
-        #back-background-block {
-          height: 66vh;
-        }
-    
-        #carouselExampleFade {
-            height: 66vh;
-        }
-    
-        #carousel-inner {
-            height: 66vh;
-        }
-    
-        #carousel-button {
-            height: 66vh;
-        }
-    
-        #form {
-            height: 66vh;
-        }
-
-        #resource-display-div {
-            height: 66vh;
-        }
-    }
-
-/* for tablets LANDSCAPE laptop 13" screen and larger */
-@media only screen and (min-device-width: 1400px) and (min-device-height: 900px) {
-    #back-background-block {
-      height: 86vh;
-    }
-
-    #carouselExampleFade {
-        height: 86vh;
-    }
-
-    #carousel-inner {
-        height: 86vh;
-    }
-
-    #carousel-button {
-        height: 86vh;
-    }
-
-    #form {
-        height: 86vh;
-    }
-
-    #resource-display-div {
-        height: 86vh;
-    }
-}
-
 .badge-secondary { font-size: 0.1em }
-
-/* carousel height */
-carousel { height: calc(100vh - 56px);}
-.carousel-inner,.carousel-item { height: 100%; width: 100%;}
-
-/* clearfix for potential div overflow */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
  
 /* form placeholder text fomatting */
 .form-control::placeholder {
+    font-family: 'Courier New', Courier, monospace;
     color:black;
     font-size: 0.8em;
     font-weight: normal;
@@ -164,20 +47,25 @@ carousel { height: calc(100vh - 56px);}
 }
 
 .form-inline::placeholder {
+    font-family: 'Courier New', Courier, monospace;
     color:black;
-    font-size: 0.7em;
-    font-weight: normal;
+    font-size: 0.8rem;
+    font-weight: 500;
     text-align: center; 
 }
 
-input:valid {
-    background-image: linear-gradient(to left, whitesmoke, rgb(195, 235, 195));
-    border: 0.5rem gray;
+.form-control::placeholder {
+    font-family: 'Courier New', Courier, monospace;
+    color:black;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center; 
 }
 
-textarea:valid {
-    background-image: linear-gradient(to left, whitesmoke, rgb(195, 235, 195));
-    border: 0.5rem gray;
+input {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
 #nav {
@@ -191,6 +79,10 @@ textarea:valid {
 
 #search-box {
     border: solid black 0.08em;
+}
+
+#select-dropdown-menu {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 /* background block contains all page content */
@@ -208,7 +100,7 @@ textarea:valid {
     background-size: cover;
     font-size: 0.9em;
     width: 100%;
-    padding-bottom: 0.4em;
+    padding-bottom: 0.8em;
 }
 
 #main-content-block {
@@ -216,98 +108,14 @@ textarea:valid {
     width: 100%;
 }
 
-/* quote block content div */
-#side-text-block {
-    background-image: url('/static/bookstack.jpeg');  
-    background-repeat: repeat; 
-    background-attachment: fixed;
-    background-size: 100px;
-    height: 100%;
-    color: black;
-    font-family:'Courier New', Courier, monospace;
-    font-size: 0.8rem;
-    font-weight: normal;
-}
-
-#side-text-format {
-    background-color: antiquewhite;
-    color: black;
-    font-size: 0.9em;
-    text-align: center;
-    border: solid black 0.08em;
-    padding: 0.3rem;
-}
-
 /* username and date text*/
 #dateBlock {
-    font-size: 0.8em !important;
-    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em !important;
+    font-weight: 600;
     color: white;
-    background-color: rgb(99, 109, 117);
     padding: 0.2rem;
-    margin-top: 0.3rem;
-    margin-right: 0.2rem;
-}
-
-#username-text {
-    font-weight: normal !important;
-    font-size: 0.9em !important;
-    background-color: rgb(99, 109, 117);
-    color: white;
-    font-weight: normal;
-    padding: 0.2rem;
-    margin-top: 0.3rem;
-}
-
-/* carousel IDs */
-#carousel-content {
-    justify-items: center;
-    align-items: center;
-}
-
-#carousel-inner {
-    background-color: whitesmoke;     
-    text-align: center;
-    justify-content: center;
-    font-size: 1.1em;
-    position: absolute;
-    vertical-align: middle;
-    width: 100%;
-    padding-right: 2rem;
-    padding-left: 2rem;
-}
-
-#carousel-button {
-    background-image: url('/static/macha-library-wallpaper.jpeg');   
-    opacity: 1 !important;
-    margin-left: 0;
-    width: 7%;
-}
-
-#carousel-icon {
-    width: 100%;
-}
-
-#carousel-btn-label {
-    font-size: 0.8em !important;
-    color: whitesmoke !important;
-}
-
-#carousel-link {
-    color: darkgreen !important;
-    font-weight: bold !important;
-    font-size: 1.1rem !important;
-    padding: 0.5rem;
-}
-
-#img-thumbnail {
-    padding: 0.1rem;
-    justify-self: center;
-}
-
-#carousel-username {
-    font-weight: normal !important;
-    font-family: 'Lucida Sans', Verdana, sans-serif !important;
+    margin: 0.2em;
 }
 
 #carousel-body-text {
@@ -317,31 +125,33 @@ textarea:valid {
     font-size: 0.9em;
 }
 
-#static-display-div {
+#display-div {
     background-color: whitesmoke !important;
-    border-style: solid;
-    border-radius: 1em;
     text-align: center;
-    border-color: rgb(195, 235, 195);
+    border: ridge 3px gray;
+    border-radius: 10px;
     font-size: 1em;
     padding-left: 3em;
     padding-right: 3em;
+    margin-bottom: 1em;
 }
 
 /* image to fill base of md size screens */
-#static-display-bg-div {
-    background-image: url('/static/bookstack.jpeg');   
-    background-attachment: fixed;
-    background-size: 300px;
+#display-bg-div {
+    background-color: rgb(195, 235, 195);
     padding: 1em;
     width: 100%;
     height: 100%;
     overflow: auto;
 }
 
+#title {
+    color: green;
+}
+
 /* all buttons */
 #btn {
-    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
     border-color: black;
     margin-left: 0.1rem;
     margin-top: 0.1rem;
@@ -349,8 +159,8 @@ textarea:valid {
 }
 
 #btn-delete {
-    background-image: linear-gradient(to left, whitesmoke, rgb(195, 235, 195));
-    font-weight: normal;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5em;
     border-color: black;
     margin-left: 0.1rem;
     margin-top: 0.1rem;
@@ -361,20 +171,9 @@ textarea:valid {
 #form {
     z-index: 1;
     background-color: whitesmoke;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    padding-top: 0rem;
-    padding-bottom: 0rem;
+    border: ridge 3px gray;
+    padding: 2em;
     font-weight: normal;
-    font-size: 1em;
-    text-align: center;
-    align-self: center;
-    justify-self: center;
-    justify-content: center;
-}
-
-#message {
-    font-size: small;
     text-align: center;
 }
 
@@ -387,19 +186,12 @@ textarea:valid {
     color: black !important;
     font-weight: normal !important;
     font-family: 'Courier New', Courier, monospace;
-    padding-right: 0.3rem;
-    padding-left: 0.3rem;
+    padding: 1rem;
     text-align: center;
-    align-self: center;
-    justify-self: center;
-    justify-content: center;
 }
 
-#text-body-default {
-    color: black;
-    font-weight: normal;
-    padding-left: 1rem;
-    padding-right: 1rem;
+#text-light-edit {
+    color: white !important;
 }
 
 #form-text-other {
@@ -407,24 +199,26 @@ textarea:valid {
     color: black;
 }
 
-.message-text {
-    font-family: 'Lucida Sans', Verdana, sans-serif !important;
-    font-size: 1em;
-    font-weight: bold;
+#message {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.1em;
     text-align: center;
-    color:red !important;
-    justify-self: center;
-    align-self: center;
-    justify-content: center;
+    color: black !important;
 }
 
 #formHelpBlock {
     font-weight: normal !important;
     font-size: 0.7em;
+    margin: 0.5rem;
 }
 
 #uploadLabel {
+    font-family:'Courier New', Courier, monospace;
     text-align: left;
+}
+
+#username-btn {
+    font-weight: 500 !important;
 }
 
 #form-checkbox, #form-checkbox2 {
@@ -435,12 +229,13 @@ textarea:valid {
 
 #entry-file {
     font-family: 'Courier New', Courier, monospace; 
-    font-weight: bold; 
+    font-weight: bold !important; 
 }
 
 /* footer */
 #footer {
-    background-color: rgb(195, 235, 195);
+    background-image: url('/static/macha-library-wallpaper.jpeg');
+    color: white;
     padding: 0;
     z-index: 1;
 }
