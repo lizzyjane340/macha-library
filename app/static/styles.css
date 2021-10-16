@@ -202,7 +202,7 @@ input {
 #text-body {
     color: black !important;
     font-weight: normal !important;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace !important;
     padding: 1rem;
     text-align: center;
 }
