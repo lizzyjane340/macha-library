@@ -187,7 +187,6 @@ input {
     overflow: auto;
     font-family: 'Courier New', Courier, monospace;
     font-size: 0.9rem;
-    z-index: 1.5;
 }
 
 #title {
@@ -225,6 +224,10 @@ input {
     padding: 2em;
     font-weight: normal;
     text-align: center;
+}
+
+#logo-form {
+    width: 3em;
 }
 
 /* text formatting and sizes */
