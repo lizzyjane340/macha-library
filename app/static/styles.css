@@ -182,7 +182,7 @@ input {
 #mobile-bg-div-2 {
     background-image: linear-gradient(to right bottom, rgb(195, 235, 195), rgb(187, 207, 187));
     color: black;
-    height: 21vh;
+    height: 30vh;
     width: 100%;
     overflow: auto;
     font-family: 'Courier New', Courier, monospace;
@@ -226,8 +226,12 @@ input {
     text-align: center;
 }
 
-#logo-form {
-    width: 3em;
+#logo-form1 {
+    width: 15%;
+}
+
+#logo-form2 {
+    width: 30%;
 }
 
 /* text formatting and sizes */
@@ -242,7 +246,6 @@ input {
     padding: 1rem;
     text-align: center;
 }
-
 
 #form-text-other {
     font-size: 0.8em;
